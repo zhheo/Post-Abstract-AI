@@ -52,7 +52,7 @@ inject:
 
 这里列出一些常见博客主题的选择器值：
 
-| 主题名称             | tianliGPT_postid         |
+| 主题名称             | tianliGPT_postSelector         |
 | -------------------- | ------------------------ |
 | hexo-theme-butterfly | #post #article-container |
 | hexo-theme-next      | #posts .post-body        |
