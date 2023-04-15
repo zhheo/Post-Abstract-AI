@@ -261,3 +261,18 @@ ins.adsbygoogle {
     background: var(--heo-fontcolor);
     color: var(--heo-card-bg);
 }
+
+.tianliGPT-title-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.tianliGPT-title-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--heo-main);
+}
+
+.tianliGPT-title-icon svg path {
+    fill: var(--heo-main);
+}
