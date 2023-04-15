@@ -50,12 +50,13 @@ inject:
 
 这个参数是填写你的博客文章所在的元素属性的选择器，在生成提交的文本时，只会将这个选择器对应的元素内的文本进行提交，并且在这个选择器对应的元素上放插入AI摘要。如果你使用的是Butterfly主题，那么为`#post #article-container`。
 
-这里列出一些常见博客主题的选择器值：
+这里列出一些常见博客主题的选择器值（部分未经过测试，如果有问题欢迎反馈）：
 
 | 主题名称             | tianliGPT_postSelector         |
 | -------------------- | ------------------------ |
 | hexo-theme-butterfly | #post #article-container |
 | hexo-theme-next      | #posts .post-body        |
+| hexo-theme-fluid | #board .post-content |
 
 ### tianliGPT_key
 
@@ -78,6 +79,18 @@ inject:
 
 即可绑定成功。
 
+## 查询余额
+
+向机器人客服再次发送绑定时的内容，会返回你剩余的tocken额度。
+
 ## 注意
 
 key与博客地址为绑定状态，所以本地调试时是无法接收到数据的。
+
+## 开发团队
+
+[@张洪Heo](https://github.com/zhheo) [@Tianli](https://github.com/Tianli0)
+
+## 售后咨询
+
+zhheo@qq.com
