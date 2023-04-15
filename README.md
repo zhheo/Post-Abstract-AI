@@ -38,7 +38,7 @@ inject:
   head:
     - <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.css">
   bottom:
-    - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';</script>
+    - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';</script>
     - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.js"></script>
 ```
 
@@ -74,7 +74,7 @@ inject:
 例如：
 
 ```
-/chat 5Q5RpqtK5Dkwn1X9Gi5e https://blog.zhheo.com/
+/chat 5Q5mpqRK5DkwT1X9Gi5e https://blog.zhheo.com/
 ```
 
 即可绑定成功。
