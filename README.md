@@ -60,7 +60,7 @@ inject:
 
 ### tianliGPT_key
 
-到[爱发电](https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00)中购买，10元一万字符（Heo全网最低价限时折扣9元）。请求过的内容再次请求不会消耗key，可以无限期使用。
+到[爱发电](https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00)中购买，10元5万字符（限时折扣9元）。请求过的内容再次请求不会消耗key，可以无限期使用。
 
 - 相比实时请求openai，使用tianliGPT可以让你请求过的内容不再消耗key，适合生产环境。
 - 相比实时请求openai，使用tianliGPT可以在国内更快速的获取摘要。
