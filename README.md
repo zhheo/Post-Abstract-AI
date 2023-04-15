@@ -26,7 +26,7 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
-let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';
+let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 </script>
 <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.js"></script>
 ```
