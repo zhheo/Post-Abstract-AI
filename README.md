@@ -4,7 +4,7 @@
 
 适用于博客的文章摘要生成器
 
-最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你你的博客接入TianliGPT。
+最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
 
 ## 什么是TianliGPT
 
@@ -23,12 +23,12 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 在博客任意位置引入js和css
 
 ```html
-<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.1/tianli_gpt.css">
+<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';
 </script>
-<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.1/tianli_gpt.js"></script>
+<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.js"></script>
 ```
 
 如果你使用的是Butterfly主题，可以在主题文件夹下的`themes/butterfly/_config.yml`文件中的inject属性中配置：
@@ -36,10 +36,10 @@ let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';
 ```yaml
 inject:
   head:
-    - <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.1/tianli_gpt.css">
+    - <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.css">
   bottom:
     - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';</script>
-    - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.1/tianli_gpt.js"></script>
+    - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.js"></script>
 ```
 
 我们需要更改一些参数来让这个模型运作起来。
@@ -77,3 +77,7 @@ inject:
 ```
 
 即可绑定成功。
+
+## 注意
+
+key与博客地址为绑定状态，所以本地调试时是无法接收到数据的。
