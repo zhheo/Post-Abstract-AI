@@ -39,7 +39,7 @@ inject:
   	- <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@main/tianli_gpt.css">
   bottom:
   	- <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';</script>
-		- <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@main/tianli_gpt.js"></script>
+	- <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@main/tianli_gpt.js"></script>
 ```
 
 我们需要更改一些参数来让这个模型运作起来。
