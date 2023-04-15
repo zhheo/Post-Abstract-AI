@@ -1,9 +1,13 @@
-console.log('TianliGPT is running');
 console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
 
-function insertAIDiv(id) {
+function insertAIDiv(selector) {
   // 获取目标元素
-  const targetElement = document.getElementById(id);
+  const targetElement = document.querySelector(selector);
+
+  // 如果没有找到目标元素，不执行任何操作
+  if (!targetElement) {
+    return;
+  }
 
   // 创建要插入的HTML元素
   const aiDiv = document.createElement('div');
@@ -38,11 +42,12 @@ function insertAIDiv(id) {
 }
 
 
+
 var tianliGPT = {
   //读取文章中的所有文本
   getTitleAndContent: function() {
     const title = document.title;
-    const container = document.getElementById(tianliGPT_postid);
+    const container = document.querySelector(tianliGPT_postSelector);
     const paragraphs = container.getElementsByTagName('p');
     const headings = container.querySelectorAll('h1, h2, h3, h4, h5');
     let content = '';
@@ -89,7 +94,7 @@ var tianliGPT = {
 }
 
 function runTianliGPT() {
-  insertAIDiv(tianliGPT_postid);
+  insertAIDiv(tianliGPT_postSelector);
   const content = tianliGPT.getTitleAndContent();
   tianliGPT.fetchTianliGPT(content).then(summary => {
     const aiExplanationDiv = document.querySelector('.tianliGPT-explanation');
