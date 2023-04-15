@@ -1,6 +1,5 @@
 console.log('TianliGPT is running');
-let tianliGPT_postid = 'article-container';
-let tianliGPT_key = '5Q5RpqtK5Dkwn1X9Gi5e';
+console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
 
 function insertAIDiv(id) {
   // 获取目标元素
