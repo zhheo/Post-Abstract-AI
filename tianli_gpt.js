@@ -1,6 +1,9 @@
 console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
 
 function insertAIDiv(selector) {
+  // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
+  removeExistingAIDiv();
+  
   // 获取目标元素
   const targetElement = document.querySelector(selector);
 
@@ -47,6 +50,16 @@ function insertAIDiv(selector) {
 
   // 将创建的元素插入到目标元素的顶部
   targetElement.insertBefore(aiDiv, targetElement.firstChild);
+}
+
+function removeExistingAIDiv() {
+  // 查找具有 "post-TianliGPT" 类的元素
+  const existingAIDiv = document.querySelector(".post-TianliGPT");
+
+  // 如果找到了这个元素，就从其父元素中删除它
+  if (existingAIDiv) {
+    existingAIDiv.parentElement.removeChild(existingAIDiv);
+  }
 }
 
 var tianliGPT = {
