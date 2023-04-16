@@ -190,7 +190,6 @@
     animation: blinking-cursor 0.5s infinite;
     -webkit-animation: blinking-cursor 0.5s infinite;
     margin-left: 4px;
-    margin-bottom: 3px;
 }
 
 @keyframes blinking-cursor {

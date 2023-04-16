@@ -20,7 +20,7 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 
 我们可以通过在网页中嵌入TianliGPT的服务支持，让TianliGPT能够获取到你需要提交的内容。
 
-在博客任意位置引入js和css
+你需要在博客后面位置引入js和css（**引入的位置应该在文章之后**）
 
 ```html
 <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.2/tianli_gpt.css">
