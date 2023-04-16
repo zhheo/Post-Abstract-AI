@@ -91,6 +91,8 @@ key与博客地址为绑定状态，所以本地调试时是无法接收到数�
 
 [@张洪Heo](https://github.com/zhheo) [@Tianli](https://github.com/Tianli0)
 
-## 售后咨询
+## 技术支持请联系
 
 zhheo@qq.com
+
+针对此项目的任何技术支持与关于API的相关问题，可以联系此邮箱，会在24小时内回复。
