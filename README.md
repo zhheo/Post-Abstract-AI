@@ -2,6 +2,7 @@
 
 <p align="center">
   <img src="https://bu.dusays.com/2023/04/15/643a29d0cf651.png" />
+  <br>
   适用于绝大多数博客的文章摘要生成器
 </p>
 
