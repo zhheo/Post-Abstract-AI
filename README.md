@@ -59,6 +59,8 @@ inject:
 | hexo-theme-fluid | #board .post-content |
 | hexo-theme-stellar | .md-text.content.post |
 
+如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
+
 ### tianliGPT_key
 
 到[爱发电](https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00)中购买，10元5万字符（限时折扣9元）。请求过的内容再次请求不会消耗key，可以无限期使用。

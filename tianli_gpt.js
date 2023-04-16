@@ -56,7 +56,7 @@ var tianliGPT = {
       const title = document.title;
       const container = document.querySelector(tianliGPT_postSelector);
       if (!container) {
-        console.error('TianliGPT错误：找不到文章容器。请尝试将引入的代码放入到文章容器之后。');
+        console.warn('TianliGPT：找不到文章容器。请尝试将引入的代码放入到文章容器之后。如果本身没有打算使用摘要功能可以忽略此提示。');
         return '';
       }
       const paragraphs = container.getElementsByTagName('p');
@@ -124,11 +124,41 @@ var tianliGPT = {
 function runTianliGPT() {
   insertAIDiv(tianliGPT_postSelector);
   const content = tianliGPT.getTitleAndContent();
-  console.log('TianliGPT本次提交的内容为：' + content);
+  if (!content && content !== '') {
+    console.log('TianliGPT本次提交的内容为：' + content);
+  }
   tianliGPT.fetchTianliGPT(content).then(summary => {
     const aiExplanationDiv = document.querySelector('.tianliGPT-explanation');
     aiExplanationDiv.innerHTML = summary;
   })
 }
 
-runTianliGPT();
+function checkURLAndRun() {
+  if (!tianliGPT_postURL) {
+    runTianliGPT(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
+    return;
+  }
+
+  try {
+    const wildcardToRegExp = (s) => {
+      return new RegExp('^' + s.split(/\*+/).map(regExpEscape).join('.*') + '$');
+    };
+
+    const regExpEscape = (s) => {
+      return s.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+    };
+
+    const urlPattern = wildcardToRegExp(tianliGPT_postURL);
+    const currentURL = window.location.href;
+
+    if (urlPattern.test(currentURL)) {
+      runTianliGPT(); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
+    } else {
+      console.log("TianliGPT：因为不符合自定义的链接规则，我决定不执行摘要功能。");
+    }
+  } catch (error) {
+    console.error("TianliGPT：我没有看懂你编写的自定义链接规则，所以我决定不执行摘要功能", error);
+  }
+}
+
+checkURLAndRun();
