@@ -27,12 +27,12 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 你需要在博客后面位置引入js和css（**引入的位置应该在文章之后**）
 
 ```html
-<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.5/tianli_gpt.css">
+<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.6/tianli_gpt.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 </script>
-<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.5/tianli_gpt.js"></script>
+<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.6/tianli_gpt.js"></script>
 ```
 
 如果你使用的是Butterfly主题，可以在主题文件夹下的`themes/butterfly/_config.yml`文件中的inject属性中配置：
@@ -40,10 +40,10 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 ```yaml
 inject:
   head:
-    - <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.5/tianli_gpt.css">
+    - <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.6/tianli_gpt.css">
   bottom:
     - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';</script>
-    - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.5/tianli_gpt.js"></script>
+    - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.6/tianli_gpt.js"></script>
 ```
 
 我们需要更改一些参数来让这个模型运作起来。
@@ -98,6 +98,14 @@ key与博客地址为绑定状态，所以本地调试时是无法接收到数�
 ## 高级技巧
 
 更多的参数变量详见[高级文档](/Advanced.md)
+
+## 升级版本
+
+非必要，不升级。
+
+基本上功能是固定下来的，本仓库作为提供稳定的基础服务，更新版本大多数情况是为了做兼容性，所以你的兼容性没有问题，是完全没有必要升级版本。
+
+升级版本方式：只需要将js和css链接中的`@0.5`这种的版本号更改为最新的版本即可。
 
 ## 开发团队
 
