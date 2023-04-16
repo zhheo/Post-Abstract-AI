@@ -2,7 +2,7 @@
 
 ![](https://bu.dusays.com/2023/04/15/643a29d0cf651.png)
 
-适用于博客的文章摘要生成器
+适用于绝大多数博客的文章摘要生成器
 
 最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
 
@@ -52,12 +52,13 @@ inject:
 
 这里列出一些常见博客主题的选择器值（部分未经过测试，如果有问题欢迎反馈）：
 
-| 主题名称             | tianliGPT_postSelector         |
-| -------------------- | ------------------------ |
-| hexo-theme-butterfly | #post #article-container |
-| hexo-theme-next      | #posts .post-body        |
-| hexo-theme-fluid | #board .post-content |
-| hexo-theme-stellar | .md-text.content.post |
+| 主题名称             | tianliGPT_postSelector         | tianliGPT_postURL |
+| -------------------- | ------------------------ | --- |
+| hexo-theme-butterfly | #post #article-container | 无需添加 |
+| hexo-theme-next      | #posts .post-body        | 无需添加 |
+| hexo-theme-fluid | #board .post-content | 无需添加 |
+| hexo-theme-stellar | .md-text.content.post | 无需添加 |
+| wordpress: Sakurairo | ,post .entry-content | 无需添加 |
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
