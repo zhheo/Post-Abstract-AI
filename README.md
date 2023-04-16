@@ -57,6 +57,7 @@ inject:
 | hexo-theme-butterfly | #post #article-container |
 | hexo-theme-next      | #posts .post-body        |
 | hexo-theme-fluid | #board .post-content |
+| hexo-theme-stellar | .md-text.content.post |
 
 ### tianliGPT_key
 
