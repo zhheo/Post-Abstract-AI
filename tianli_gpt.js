@@ -49,61 +49,82 @@ function insertAIDiv(selector) {
   targetElement.insertBefore(aiDiv, targetElement.firstChild);
 }
 
-
-
 var tianliGPT = {
   //读取文章中的所有文本
   getTitleAndContent: function() {
-    const title = document.title;
-    const container = document.querySelector(tianliGPT_postSelector);
-    const paragraphs = container.getElementsByTagName('p');
-    const headings = container.querySelectorAll('h1, h2, h3, h4, h5');
-    let content = '';
+    try {
+      const title = document.title;
+      const container = document.querySelector(tianliGPT_postSelector);
+      if (!container) {
+        console.error('TianliGPT错误：找不到文章容器。请尝试将引入的代码放入到文章容器之后。');
+        return '';
+      }
+      const paragraphs = container.getElementsByTagName('p');
+      const headings = container.querySelectorAll('h1, h2, h3, h4, h5');
+      let content = '';
   
-    for (let h of headings) {
-      content += h.innerText + ' ';
+      for (let h of headings) {
+        content += h.innerText + ' ';
+      }
+  
+      for (let p of paragraphs) {
+        // 移除包含'http'的链接
+        const filteredText = p.innerText.replace(/https?:\/\/[^\s]+/g, '');
+        content += filteredText;
+      }
+  
+      const combinedText = title + ' ' + content;
+      const truncatedText = combinedText.slice(0, 1000);
+      return truncatedText;
+    } catch (e) {
+      console.error('TianliGPT错误：可能由于一个或多个错误导致没有正常运行，原因出在获取文章容器中的内容失败，或者可能是在文章转换过程中失败。', e);
+      return '';
     }
-  
-    for (let p of paragraphs) {
-      // 移除包含'http'的链接
-      const filteredText = p.innerText.replace(/https?:\/\/[^\s]+/g, '');
-      content += filteredText;
-    }
-  
-    const combinedText = title + ' ' + content;
-    const truncatedText = combinedText.slice(0, 1000);
-    return truncatedText;
   },
+  
   fetchTianliGPT: async function(content) {
+    if (!tianliGPT_key) {
+      return "没有获取到key，代码可能没有安装正确。如果你需要在tianli_gpt文件引用前定义tianliGPT_key变量。详细请查看文档。";
+    }
+
+    if (tianliGPT_key === "5Q5mpqRK5DkwT1X9Gi5e") {
+      return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
+    }
+
     const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
   
     try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), timeout);
-  
-      const response = await fetch(apiUrl, { signal: controller.signal });
-  
-      if (response.ok) {
-        const data = await response.json();
-        return data.summary;
-      } else {
-        throw new Error('请求失败');
-      }
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeout);
+        const response = await fetch(apiUrl, { signal: controller.signal });
+        if (response.ok) {
+            const data = await response.json();
+            return data.summary;
+        } else {
+            throw new Error('请求失败');
+        }
     } catch (error) {
-      if (error.name === 'AbortError') {
-        console.error('请求超时');
-      } else {
-        console.error('请求失败：', error);
-      }
-      return '获取文章摘要超时。当你出现这个问题时，可能是因为文章过长导致的AI运算量过大， 您可以稍等一下然后刷新页面重试。也有可能是你的key与域名没有绑定。请使用与key绑定时的域名进行获取';
+        if (error.name === 'AbortError') {
+            if (window.location.hostname === 'localhost') {
+                console.warn('警告：请勿在本地主机上测试 API 密钥。');
+                return '获取文章摘要超时。请勿在本地主机上测试 API 密钥。';
+            } else {
+                console.error('请求超时');
+                return '获取文章摘要超时。当你出现这个问题时，可能是key或者绑定的域名不正确。也可能是因为文章过长导致的 AI 运算量过大，您可以稍等一下然后刷新页面重试。';
+            }
+        } else {
+            console.error('请求失败：', error);
+            return '获取文章摘要失败，请稍后再试。';
+        }
     }
-  },
+  }
 }
 
 function runTianliGPT() {
   insertAIDiv(tianliGPT_postSelector);
   const content = tianliGPT.getTitleAndContent();
+  console.log('TianliGPT本次提交的内容为：' + content);
   tianliGPT.fetchTianliGPT(content).then(summary => {
     const aiExplanationDiv = document.querySelector('.tianliGPT-explanation');
     aiExplanationDiv.innerHTML = summary;
