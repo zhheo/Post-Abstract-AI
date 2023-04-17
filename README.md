@@ -62,6 +62,7 @@ inject:
 | hexo-theme-next      | #posts .post-body        | 无需添加 |
 | hexo-theme-fluid | #board .post-content | 无需添加 |
 | hexo-theme-stellar | .md-text.content.post | 无需添加 |
+| hexo-theme-volantis | #post #post-body | 无需添加 |
 | wordpress: Sakurairo | .post .entry-content | 无需添加 |
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
