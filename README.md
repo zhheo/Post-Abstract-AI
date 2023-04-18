@@ -3,12 +3,14 @@
 <p align="center">
   <img src="https://bu.dusays.com/2023/04/15/643a29d0cf651.png" />
   <br>
+  <br>
   适用于绝大多数博客的文章摘要生成器
 </p>
 
+
 最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
 
-![](https://bu.dusays.com/2023/04/16/643bc021c68ac.png)
+![](https://bu.dusays.com/2023/04/18/643e3befa73d5.png)
 
 ## 什么是TianliGPT
 
