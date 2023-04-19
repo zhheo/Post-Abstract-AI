@@ -1,6 +1,8 @@
 ## 高级技巧
 
-以下都是可选变量，如果能正常运行，可以不填写。
+以下都是可选变量，如果能正常运行，可以不填写。添加方式就是在填写key的那一段代码的`</script>`之前添加即可。
+
+例如：`<script>let tianliGPT_wordLimit = 2000; let tianliGPT_postURL = '*/p/*'; let tianliGPT_postSelector = '\#article-container';let tianliGPT_key = '这是你的key';</script>`
 
 ### tianliGPT_postURL
 
