@@ -87,7 +87,7 @@ var tianliGPT = {
       }
   
       const combinedText = title + ' ' + content;
-      const wordLimit = 1000;
+      let wordLimit = 1000;
       if (typeof tianliGPT_wordLimit !== "undefined") {
         wordLimit = tianliGPT_wordLimit;
       }
