@@ -119,7 +119,12 @@ var tianliGPT = {
             const data = await response.json();
             return data.summary;
         } else {
-            throw new Error('请求失败');
+            if (response.status === 402) {
+                document.querySelectorAll('.post-TianliGPT').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+            throw new Error('TianliGPT：余额不足，请充值后请求新的文章');
         }
     } catch (error) {
         if (error.name === 'AbortError') {
@@ -135,7 +140,9 @@ var tianliGPT = {
             return '获取文章摘要失败，请稍后再试。';
         }
     }
-  }
+}
+
+
 }
 
 function runTianliGPT() {
