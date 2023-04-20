@@ -58,15 +58,16 @@ inject:
 
 这里列出一些常见博客主题的选择器值（部分未经过测试，如果有问题欢迎反馈）：
 
-| 主题名称             | tianliGPT_postSelector         | tianliGPT_postURL |
-| -------------------- | ------------------------ | --- |
-| hexo-theme-butterfly | #post #article-container | 无需添加 |
-| hexo-theme-next      | #posts .post-body        | 无需添加 |
-| hexo-theme-fluid | #board .post-content | 无需添加 |
-| hexo-theme-stellar | .md-text.content.post | 无需添加 |
-| hexo-theme-volantis | #post #post-body | 无需添加 |
-| wordpress: Sakurairo | .post .entry-content | 无需添加 |
-| valaxy-theme-yun | .content .markdown-body | `*/posts/*` |
+| 主题名称             | tianliGPT_postSelector         | tianliGPT_postURL | 备注 |
+| -------------------- | ------------------------ | --- | --- |
+| hexo-theme-butterfly | #post #article-container | 无需添加 | 无 |
+| hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
+| hexo-theme-fluid | #board .post-content | 无需添加 | 无 |
+| hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
+| hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
+| wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
+| valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
+| Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
