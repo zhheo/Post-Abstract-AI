@@ -69,6 +69,7 @@ inject:
 | wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/34000.html` | 无 |
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
+| wordpress-pix | .single-content | `https://*/*.html` | 无 ｜
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
