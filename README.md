@@ -47,6 +47,7 @@ inject:
     - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';</script>
     - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.js"></script>
 ```
+如果开启了pjax，那么`<script src="...tianli_gpt.js"></script>`要添加data-pjax属性：`<script data-pjax src="...tianli_gpt.js"></script>`
 
 我们需要更改一些参数来让这个模型运作起来。
 
