@@ -87,23 +87,19 @@ inject:
 
 - 符合中国大陆法律法规。
 
-购买完成后，添加机器人客服：2102916311，回复`/chat 你的key 你的博客地址注意保留最后的斜杠`
+购买完成后，进入QQ频道：点击链接加入讨论子频道【TianliGPT 博客摘要】：https://pd.qq.com/s/7cx85i9l0
+
+@咕哩咕哩 回复`/chat 你的key 你的博客地址注意保留最后的斜杠`
 
 例如：
 
 ```
-/chat 5Q5mpqRK5DkwT1X9Gi5e https://blog.zhheo.com/
+@咕哩咕哩 /chat 5Q5mpqRK5DkwT1X9Gi5e https://blog.zhheo.com/
 ```
 
+![](https://bu.dusays.com/2023/06/19/648fb935438a4.png)
+
 即可绑定成功。
-
-## 查询余额
-
-![](https://bu.dusays.com/2023/04/17/643cec7737cae.png)
-
-向机器人客服再次发送绑定时的内容，会返回你剩余的tocken额度。
-
-key与博客地址为绑定状态，所以本地调试时是无法接收到数据的。不绑定机器人可能会产生跨域问题，请将key绑定到机器人上。
 
 ## 高级技巧
 
