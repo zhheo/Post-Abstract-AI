@@ -7,7 +7,6 @@
   适用于绝大多数博客的文章摘要生成器
 </p>
 
-
 最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
 
 ![](https://bu.dusays.com/2023/04/18/643e3befa73d5.png)
@@ -47,6 +46,7 @@ inject:
     - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';</script>
     - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.js"></script>
 ```
+
 如果开启了pjax，那么`<script src="...tianli_gpt.js"></script>`要添加data-pjax属性：`<script data-pjax src="...tianli_gpt.js"></script>`
 
 我们需要更改一些参数来让这个模型运作起来。
@@ -74,6 +74,7 @@ inject:
 | Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
+| hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 排除 special |
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
@@ -88,7 +89,7 @@ inject:
 
 - 符合中国大陆法律法规。
 
-购买完成后，进入QQ频道：点击链接加入讨论子频道【TianliGPT 博客摘要】：https://pd.qq.com/s/7cx85i9l0
+购买完成后，进入QQ频道：点击链接加入讨论子频道【TianliGPT 博客摘要】：<https://pd.qq.com/s/7cx85i9l0>
 
 @咕哩咕哩 回复`/chat 你的key 你的博客地址注意保留最后的斜杠`
 
@@ -126,8 +127,8 @@ inject:
 
 ## 技术支持请联系
 
-zhheo@qq.com
+<zhheo@qq.com>
 
-点击链接加入讨论子频道【TianliGPT 问题交流】：https://pd.qq.com/s/7cx85i9l0
+点击链接加入讨论子频道【TianliGPT 问题交流】：<https://pd.qq.com/s/7cx85i9l0>
 
 针对此项目的任何技术支持与关于API的相关问题，可以联系此邮箱，会在24小时内回复。
