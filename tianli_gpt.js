@@ -1,4 +1,5 @@
 console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
+let tianliGPTIsRunning = false;
 
 function insertAIDiv(selector) {
   // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
@@ -140,9 +141,121 @@ var tianliGPT = {
             return '获取文章摘要失败，请稍后再试。';
         }
     }
-}
+  },
 
+  aiShowAnimation: function (text) {
+    const element = document.querySelector(".tianliGPT-explanation");
+    if (!element) {
+      return;
+    }
 
+    if (tianliGPTIsRunning) {
+      return;
+    }
+    tianliGPTIsRunning = true;
+    const typingDelay = 25;
+    const waitingTime = 1000;
+    const punctuationDelayMultiplier = 6;
+
+    element.style.display = "block";
+    element.innerHTML = "生成中..." + '<span class="blinking-cursor"></span>';
+
+    let animationRunning = false;
+    let currentIndex = 0;
+    let initialAnimation = true;
+
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+    let lastUpdateTime = performance.now();
+
+    function type() {
+      if (currentIndex < text.length && animationRunning) {
+        const currentTime = performance.now();
+        const timeDiff = currentTime - lastUpdateTime;
+
+        const letter = text.slice(currentIndex, currentIndex + 1);
+        const isPunctuation = /[，。！、？,.!?]/.test(letter);
+        const delay = isPunctuation ? typingDelay * punctuationDelayMultiplier : typingDelay;
+
+        if (timeDiff >= delay) {
+          element.innerText = text.slice(0, currentIndex + 1);
+          lastUpdateTime = currentTime;
+          currentIndex++;
+
+          if (currentIndex < text.length) {
+            element.innerHTML =
+              text.slice(0, currentIndex) +
+              '<span class="blinking-cursor"></span>';
+          } else {
+            element.innerHTML = text;
+            element.style.display = "block";
+            tianliGPTIsRunning = false;
+          }
+        }
+        requestAnimationFrame(type);
+      }
+    }
+
+    function checkVisibility() {
+      if (isInViewport(element)) {
+        if (!animationRunning) {
+          animationRunning = true;
+          if (initialAnimation) {
+            setTimeout(() => {
+              type();
+              initialAnimation = false;
+            }, waitingTime);
+          } else {
+            type();
+          }
+        }
+      } else {
+        animationRunning = false;
+      }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+
+    function checkVisibility() {
+      if (isInViewport(element)) {
+        if (!animationRunning) {
+          animationRunning = true;
+          if (initialAnimation) {
+            setTimeout(() => {
+              type();
+              initialAnimation = false;
+            }, waitingTime);
+          } else {
+            type();
+          }
+        }
+      } else {
+        animationRunning = false;
+      }
+    }
+  
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+  
+    // 使用 setInterval 添加定时器，周期性检查元素可见性
+    const visibilityCheckInterval = setInterval(checkVisibility, 500);
+  
+    // 当动画完成后，清除定时器
+    if (!tianliGPTIsRunning) {
+      clearInterval(visibilityCheckInterval);
+    }
+  
+    // Trigger initial visibility check
+    checkVisibility();
+  },
 }
 
 function runTianliGPT() {
@@ -152,8 +265,7 @@ function runTianliGPT() {
     console.log('TianliGPT本次提交的内容为：' + content);
   }
   tianliGPT.fetchTianliGPT(content).then(summary => {
-    const aiExplanationDiv = document.querySelector('.tianliGPT-explanation');
-    aiExplanationDiv.innerHTML = summary;
+    tianliGPT.aiShowAnimation(summary);
   })
 }
 
