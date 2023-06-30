@@ -66,6 +66,7 @@ inject:
 | hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
 | hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
+| hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
 | wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/34000.html` | 无 |
 | wordpress：pix | .single-content | `https://*/*.html` | 无 |
 | wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
