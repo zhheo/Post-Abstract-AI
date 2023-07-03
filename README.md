@@ -89,17 +89,9 @@ inject:
 
 - 符合中国大陆法律法规。
 
-购买完成后，进入QQ频道：点击链接加入讨论子频道【TianliGPT 博客摘要】：https://pd.qq.com/s/7cx85i9l0
+购买完成后，进入管理后台：https://summary.tianli0.top/
 
-@咕哩咕哩 回复`/chat 你的key 你的博客地址注意保留最后的斜杠`
-
-例如：
-
-```
-@咕哩咕哩 /chat 5Q5mpqRK5DkwT1X9Gi5e https://blog.zhheo.com/
-```
-
-![](https://bu.dusays.com/2023/06/19/648fb935438a4.png)
+登录后点击右上角的“添加新网站”，输入密钥即可
 
 即可绑定成功。
 
