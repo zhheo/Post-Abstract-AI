@@ -89,7 +89,7 @@ inject:
 
 - 符合中国大陆法律法规。
 
-购买完成后，进入管理后台：https://summary.tianli0.top/
+购买完成后，进入管理后台：https://summary.zhheo.com/
 
 登录后点击右上角的“添加新网站”，输入密钥即可
 
@@ -115,7 +115,9 @@ inject:
 
 ## 开发团队
 
-[@张洪Heo](https://github.com/zhheo) [@Tianli](https://github.com/Tianli0)
+后端开发：[@Tianli](https://github.com/Tianli0)
+
+产品设计与前端开发：[@张洪Heo](https://github.com/zhheo)
 
 ## 技术支持请联系
 
