@@ -76,7 +76,7 @@ inject:
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
 
-如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
+如果你没有在上面看到你的主题，可以查看[通用教程](https://flowus.cn/zhheo/share/7a353126-f225-4e5c-8c11-f5adefe85b7f)
 
 ### tianliGPT_key
 
