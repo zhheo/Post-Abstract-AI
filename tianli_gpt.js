@@ -1,5 +1,5 @@
 console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
-let tianliGPTIsRunning = false;
+var tianliGPTIsRunning = false;
 
 function insertAIDiv(selector) {
   // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
