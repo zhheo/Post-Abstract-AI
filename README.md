@@ -37,17 +37,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.js"></script>
 ```
 
-如果你使用的是Butterfly主题，可以在主题文件夹下的`themes/butterfly/_config.yml`文件中的inject属性中配置：
-
-```yaml
-inject:
-  head:
-    - <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.css">
-  bottom:
-    - <script>let tianliGPT_postSelector = '\#post \#article-container';let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';</script>
-    - <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.js"></script>
-```
-如果开启了pjax，那么`<script src="...tianli_gpt.js"></script>`要添加data-pjax属性：`<script data-pjax src="...tianli_gpt.js"></script>`
+如果你使用的是Butterfly主题，可以[在这里查看教程](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2)
 
 我们需要更改一些参数来让这个模型运作起来。
 
@@ -61,13 +51,13 @@ inject:
 
 | 主题名称             | tianliGPT_postSelector         | tianliGPT_postURL | 备注 |
 | -------------------- | ------------------------ | --- | --- |
-| hexo-theme-butterfly | #post #article-container | 无需添加 | 无 |
+| [hexo-theme-butterfly](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2) | #post #article-container | 无需添加 | 无 |
 | hexo-theme-fluid | #board .post-content | 无需添加 | 无 |
 | hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
 | hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
 | hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
-| wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`/*.html` | 无 |
+| wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/34000.html` | 无 |
 | wordpress：pix | .single-content | `https://*/*.html` | 无 |
 | wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
 | wordpress: 子比主题 | .single-post .wp-posts-content | 无需添加 | 无 |
@@ -76,7 +66,7 @@ inject:
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
 
-如果你没有在上面看到你的主题，可以查看[通用教程](https://flowus.cn/zhheo/share/7a353126-f225-4e5c-8c11-f5adefe85b7f)
+如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
 ### tianliGPT_key
 
