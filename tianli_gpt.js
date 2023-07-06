@@ -249,9 +249,4 @@ function checkURLAndRun() {
   }
 }
 
-// 适配pjax，不再需要外部script标签添加data-pjax属性
-if(!window.pjax){
-  checkURLAndRun();
-}
-document.removeEventListener('pjax:complete',checkURLAndRun);
-document.addEventListener('pjax:complete',checkURLAndRun);
+checkURLAndRun();
