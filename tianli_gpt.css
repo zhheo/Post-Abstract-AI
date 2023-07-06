@@ -146,6 +146,48 @@
   --style-border-dashed: 1px dashed var(--heo-theme-op);
   --style-border-forever: 2px solid var(--heo-lighttext);
 }
+/* 适配WP Sakurairo暗色模式 */
+body.dark{
+  --heo-theme: #f2b94b;
+  --heo-theme-op: #f2b94b23;
+  --heo-theme-op-deep: #f2b94bdd;
+  --heo-theme-none: #f2b94b00;
+  --heo-blue: #0084FF;
+  --heo-red: #FF3842;
+  --heo-pink: #d44040;
+  --heo-green: #3e9f50;
+  --heo-yellow: #ffc93e;
+  --heo-yellow-op: #ffc93e30;
+  --heo-orange: #ff953e;
+  --heo-fontcolor: #F7F7FA;
+  --heo-background: #18171d;
+  --heo-reverse: #fff;
+  --heo-maskbg: rgba(0, 0, 0, 0.6);
+  --heo-maskbgdeep: rgba(0, 0, 0, 0.85);
+  --heo-hovertext: #0A84FF;
+  --heo-ahoverbg: #fff;
+  --heo-lighttext: var(--heo-theme);
+  --heo-secondtext: #a1a2b8;
+  --heo-scrollbar: rgba(200, 200, 223, 0.4);
+  --heo-card-btn-bg: #30343f;
+  --heo-post-blockquote-bg: #000;
+  --heo-post-tabs-bg: #121212;
+  --heo-secondbg: #30343f;
+  --heo-shadow-nav: 0 5px 20px 0px rgba(28, 28, 28, 0.4);
+  --heo-card-bg: #1d1e22;
+  --heo-card-bg-op: var(--heo-white-op);
+  --heo-card-bg-none: #1d1b2600;
+  --heo-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+  --heo-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+  --heo-card-border: #3d3d3f;
+  --heo-shadow-border: 0 8px 16px -4px #00000050;
+  --style-border: 1px solid var(--heo-card-border);
+  --style-border-always: 1px solid var(--heo-card-border);
+  --style-border-hover: 1px solid var(--heo-theme);
+  --style-border-hover-always: 1px solid var(--heo-theme);
+  --style-border-dashed: 1px dashed var(--heo-theme-op);
+  --style-border-forever: 2px solid var(--heo-lighttext);
+}
 
 /* AI */
 .post-TianliGPT {
