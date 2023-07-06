@@ -108,8 +108,8 @@ var tianliGPT = {
     if (tianliGPT_key === "5Q5mpqRK5DkwT1X9Gi5e") {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
-
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}`;
+    var url = window.location.href;
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
   
     try {
