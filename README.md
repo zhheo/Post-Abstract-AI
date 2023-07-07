@@ -29,12 +29,12 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 你需要在博客后面位置引入js和css（**引入的位置应该在文章之后**）
 
 ```html
-<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.css">
+<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.11/tianli_gpt.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 </script>
-<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.8/tianli_gpt.js"></script>
+<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.11/tianli_gpt.js"></script>
 ```
 
 如果你使用的是Butterfly主题，可以[在这里查看教程](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2)
