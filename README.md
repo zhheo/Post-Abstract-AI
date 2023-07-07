@@ -52,7 +52,11 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | 主题名称             | tianliGPT_postSelector         | tianliGPT_postURL | 备注 |
 | -------------------- | ------------------------ | --- | --- |
 | [hexo-theme-butterfly](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2) | #post #article-container | 无需添加 | 无 |
+<<<<<<< Updated upstream
 | [hexo-theme-fluid](https://flowus.cn/zhheo/share/a8c7101e-9b06-4ec8-9063-0fe3eef31f5c) | #board .post-content | 无需添加 | 无 |
+=======
+| hexo-theme-fluid | #board .post-content | 无需添加 | 无 |
+>>>>>>> Stashed changes
 | hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
 | hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
