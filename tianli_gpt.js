@@ -109,7 +109,8 @@ var tianliGPT = {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
     var url = window.location.href;
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}`;
+    const userOpenId = localStorage.getItem('user_id');
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}&user_openid=${encodeURIComponent(userOpenId)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
   
     try {
@@ -249,4 +250,35 @@ function checkURLAndRun() {
   }
 }
 
-checkURLAndRun();
+async function userInit() {
+  if (localStorage.getItem('user_id')) {
+    console.log('user_id已存在');
+    return;
+  }
+  try {
+    const options = { method: 'GET' };
+    const response = await fetch('https://summary.tianli0.top/new_openid', options);
+    if (!response.ok) {
+      throw new Error('user_id请求出错');
+    }
+    const data = await response.json();
+    console.log(data.openid);
+    localStorage.setItem('user_id', data.openid);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function reloadUserID() {
+  if (localStorage.getItem('user_id')) {
+      localStorage.removeItem('user_id');
+      await userInit();
+  }
+}
+
+async function loadAndRunTianliGPT() {
+  await reloadUserID();
+  checkURLAndRun();
+}
+
+loadAndRunTianliGPT();
