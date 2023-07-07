@@ -1,6 +1,27 @@
 console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
 var tianliGPTIsRunning = false;
 
+// 使用FingerprintJS加载器从CDN加载FingerprintJS
+const loadFingerprintJS = () => {
+  return import('https://img1.tianli0.top/fingerprint.js')
+    .then(FingerprintJS => FingerprintJS.load())
+    .then(fp => fp.get())
+    .then(result => result.visitorId);
+}
+
+// 调用函数获取visitorId
+loadFingerprintJS()
+  .then(visitorId => {
+    console.log(visitorId);
+    localStorage.setItem('visitorId', visitorId);
+  })
+  .catch(error => {
+    console.error('获取visitorId时出错：', error);
+  });
+
+const storedVisitorId = localStorage.getItem('visitorId');
+console.log(storedVisitorId);
+
 function insertAIDiv(selector) {
   // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
   removeExistingAIDiv();
@@ -109,8 +130,7 @@ var tianliGPT = {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
     var url = window.location.href;
-    const userOpenId = localStorage.getItem('user_id');
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}&user_openid=${encodeURIComponent(userOpenId)}`;
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}&user_openid=${storedVisitorId}`;
     const timeout = 20000; // 设置超时时间（毫秒）
   
     try {
@@ -250,35 +270,4 @@ function checkURLAndRun() {
   }
 }
 
-async function userInit() {
-  if (localStorage.getItem('user_id')) {
-    console.log('user_id已存在');
-    return;
-  }
-  try {
-    const options = { method: 'GET' };
-    const response = await fetch('https://summary.tianli0.top/new_openid', options);
-    if (!response.ok) {
-      throw new Error('user_id请求出错');
-    }
-    const data = await response.json();
-    console.log(data.openid);
-    localStorage.setItem('user_id', data.openid);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-async function reloadUserID() {
-  if (localStorage.getItem('user_id')) {
-      localStorage.removeItem('user_id');
-      await userInit();
-  }
-}
-
-async function loadAndRunTianliGPT() {
-  await reloadUserID();
-  checkURLAndRun();
-}
-
-loadAndRunTianliGPT();
+checkURLAndRun();
