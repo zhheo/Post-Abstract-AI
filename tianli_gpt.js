@@ -9,18 +9,27 @@ const loadFingerprintJS = () => {
     .then(result => result.visitorId);
 }
 
-// 调用函数获取visitorId
-loadFingerprintJS()
-  .then(visitorId => {
-    console.log(visitorId);
-    localStorage.setItem('visitorId', visitorId);
-  })
-  .catch(error => {
-    console.error('获取visitorId时出错：', error);
-  });
+// 调用函数获取visitorId并存储在localStorage中
+const getVisitorId = () => {
+  loadFingerprintJS()
+    .then(visitorId => {
+      console.log("生成用户识别码:"+visitorId);
+      localStorage.setItem('visitorId', visitorId);
+    })
+    .catch(error => {
+      console.error('获取visitorId时出错：', error);
+    });
+}
 
+// 检查localStorage中是否存在storedVisitorId，如果不存在则获取visitorId
 const storedVisitorId = localStorage.getItem('visitorId');
-console.log(storedVisitorId);
+if (!storedVisitorId) {
+  getVisitorId();
+}
+else{
+  console.log("调用已存储识别码:"+storedVisitorId);
+}
+
 
 function insertAIDiv(selector) {
   // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
