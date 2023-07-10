@@ -58,7 +58,6 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
 | hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
 | [wordpress: argon](https://flowus.cn/08d8f6e4-d487-40b9-951e-8c0c3df7506f) | #post_content | 无需添加 | 无 |
-| wordpress: argon-theme | #post-content | */archives/* | 无 |
 | wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/34000.html` | 无 |
 | wordpress：pix | .single-content | `https://*/*.html` | 无 |
 | wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
