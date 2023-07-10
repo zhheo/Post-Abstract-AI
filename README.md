@@ -118,3 +118,7 @@ zhheo@qq.com
 点击链接加入讨论子频道【TianliGPT 问题交流】：https://pd.qq.com/s/7cx85i9l0
 
 针对此项目的任何技术支持与关于API的相关问题，可以联系此邮箱，会在24小时内回复。
+
+## 更多支持TianliGPT的项目
+
+[Post-Summary-AI](https://github.com/qxchuckle/Post-Summary-AI)
