@@ -121,4 +121,4 @@ zhheo@qq.com
 
 ## 更多支持TianliGPT的项目
 
-[Post-Summary-AI](https://github.com/qxchuckle/Post-Summary-AI)
+[Post-Summary-AI](https://github.com/qxchuckle/Post-Summary-AI) - 轻笑开发的博客摘要生成工具
