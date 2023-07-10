@@ -64,6 +64,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
 | wordpress: 子比主题 | .single-post .wp-posts-content | 无需添加 | 无 |
 | wordpress: CorePress | .post-content-content | 无需添加 | 无 |
+| wordpress: OneNav | .post-template-default .panel-body | 无需添加 | 无 |
 | Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
