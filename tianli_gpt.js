@@ -130,7 +130,7 @@ var tianliGPT = {
     }
   },
 
-  fetchTianliGPT: async function(content, title) {
+  fetchTianliGPT: async function(content, title, recommendation) {
     if (!tianliGPT_key) {
       return "没有获取到key，代码可能没有安装正确。如果你需要在tianli_gpt文件引用前定义tianliGPT_key变量。详细请查看文档。";
     }
@@ -139,7 +139,7 @@ var tianliGPT = {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
     var url = window.location.href;
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}&user_openid=${storedVisitorId}&title=${encodeURIComponent(title)}`;
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}${recommendation ? `&user_openid=${storedVisitorId}` : ''}&title=${encodeURIComponent(title)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
 
     try {
@@ -246,7 +246,7 @@ function runTianliGPT() {
   if (content) {
     console.log('TianliGPT本次提交的内容为：' + content);
   }
-  tianliGPT.fetchTianliGPT(content, title).then(summary => {
+  tianliGPT.fetchTianliGPT(content, title, typeof tianliGPT_recommendation !== "undefined" ? tianliGPT_recommendation : false).then(summary => {
     tianliGPT.aiShowAnimation(summary);
   })
 }
