@@ -3,7 +3,7 @@ var tianliGPTIsRunning = false;
 
 // 使用FingerprintJS加载器从CDN加载FingerprintJS
 const loadFingerprintJS = () => {
-  return import('https://img1.tianli0.top/fingerprint.js')
+  return import('https://cdn1.tianli0.top/gh/tianli0/Post-Abstract-AI/fingerprint.js')
     .then(FingerprintJS => FingerprintJS.load())
     .then(fp => fp.get())
     .then(result => result.visitorId);
@@ -11,25 +11,32 @@ const loadFingerprintJS = () => {
 
 // 调用函数获取visitorId并存储在localStorage中
 const getVisitorId = () => {
-  loadFingerprintJS()
-    .then(visitorId => {
-      console.log("生成用户识别码:"+visitorId);
-      localStorage.setItem('visitorId', visitorId);
-    })
-    .catch(error => {
-      console.error('获取visitorId时出错：', error);
-    });
+  const storedVisitorId = localStorage.getItem('visitorId');
+  if (storedVisitorId) {
+    console.log("调用已存储识别码:" + storedVisitorId);
+    return Promise.resolve(storedVisitorId);
+  } else {
+    return loadFingerprintJS()
+      .then(visitorId => {
+        console.log("生成用户识别码:" + visitorId);
+        localStorage.setItem('visitorId', visitorId);
+        return visitorId;
+      })
+      .catch(error => {
+        console.error('获取visitorId时出错：', error);
+      });
+  }
 }
 
 // 检查localStorage中是否存在storedVisitorId，如果不存在则获取visitorId
-const storedVisitorId = localStorage.getItem('visitorId');
-if (!storedVisitorId) {
-  getVisitorId();
+const checkVisitorId = () => {
+  const storedVisitorId = localStorage.getItem('visitorId');
+  if (!storedVisitorId) {
+    getVisitorId();
+  } else {
+    console.log("调用已存储识别码:" + storedVisitorId);
+  }
 }
-else{
-  console.log("调用已存储识别码:"+storedVisitorId);
-}
-
 
 function insertAIDiv(selector) {
   // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
@@ -130,7 +137,7 @@ var tianliGPT = {
     }
   },
 
-  fetchTianliGPT: async function(content, title, recommendation) {
+  fetchTianliGPT: async function(content, title, recommendation, visitorId) {
     if (!tianliGPT_key) {
       return "没有获取到key，代码可能没有安装正确。如果你需要在tianli_gpt文件引用前定义tianliGPT_key变量。详细请查看文档。";
     }
@@ -139,7 +146,7 @@ var tianliGPT = {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
     var url = window.location.href;
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}${recommendation ? `&user_openid=${storedVisitorId}` : ''}&title=${encodeURIComponent(title)}`;
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}${recommendation ? `&user_openid=${visitorId}` : ''}&title=${encodeURIComponent(title)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
 
     try {
@@ -240,20 +247,22 @@ var tianliGPT = {
   },
 }
 
-function runTianliGPT() {
+function runTianliGPT(visitorId) {
   insertAIDiv(tianliGPT_postSelector);
   const { title, content } = tianliGPT.getTitleAndContent();
   if (content) {
     console.log('TianliGPT本次提交的内容为：' + content);
   }
-  tianliGPT.fetchTianliGPT(content, title, typeof tianliGPT_recommendation !== "undefined" ? tianliGPT_recommendation : false).then(summary => {
+  tianliGPT.fetchTianliGPT(content, title, typeof tianliGPT_recommendation !== "undefined" ? tianliGPT_recommendation : false, visitorId).then(summary => {
     tianliGPT.aiShowAnimation(summary);
   })
 }
 
 function checkURLAndRun() {
   if (typeof tianliGPT_postURL === "undefined") {
-    runTianliGPT(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
+    getVisitorId().then(visitorId => {
+      runTianliGPT(visitorId); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
+    });
     return;
   }
 
@@ -270,7 +279,9 @@ function checkURLAndRun() {
     const currentURL = window.location.href;
 
     if (urlPattern.test(currentURL)) {
-      runTianliGPT(); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
+      getVisitorId().then(visitorId => {
+        runTianliGPT(visitorId); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
+      });
     } else {
       console.log("TianliGPT：因为不符合自定义的链接规则，我决定不执行摘要功能。");
     }
@@ -279,4 +290,5 @@ function checkURLAndRun() {
   }
 }
 
+checkVisitorId();
 checkURLAndRun();
