@@ -122,3 +122,5 @@ zhheo@qq.com
 ## 更多支持TianliGPT的项目
 
 [Post-Summary-AI](https://github.com/qxchuckle/Post-Summary-AI) - 轻笑开发的博客摘要生成工具
+
+[hexo-ai-excerpt](https://github.com/rootlexblog/hexo-ai-excerpt) - 在本地部署时添加AI摘要
