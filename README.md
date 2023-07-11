@@ -33,9 +33,6 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
-//用户个性化推荐，如果开启此选项将额外加载一段js，将根据用户浏览文章情况进行个性化博客文章推荐。
-//不配置此选项或者将值改为false将不会生效。
-let tianliGPT_recommendation = true;
 </script>
 <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.11/tianli_gpt.js"></script>
 ```
