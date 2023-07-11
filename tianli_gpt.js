@@ -1,43 +1,6 @@
 console.log("\n %c Post-Abstract-AI 开源博客文章摘要AI生成工具 %c https://github.com/zhheo/Post-Abstract-AI \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
 var tianliGPTIsRunning = false;
 
-// 使用FingerprintJS加载器从CDN加载FingerprintJS
-const loadFingerprintJS = () => {
-  return import('https://cdn1.tianli0.top/gh/tianli0/Post-Abstract-AI/fingerprint.js')
-    .then(FingerprintJS => FingerprintJS.load())
-    .then(fp => fp.get())
-    .then(result => result.visitorId);
-}
-
-// 调用函数获取visitorId并存储在localStorage中
-const getVisitorId = () => {
-  const storedVisitorId = localStorage.getItem('visitorId');
-  if (storedVisitorId) {
-    console.log("调用已存储识别码:" + storedVisitorId);
-    return Promise.resolve(storedVisitorId);
-  } else {
-    return loadFingerprintJS()
-      .then(visitorId => {
-        console.log("生成用户识别码:" + visitorId);
-        localStorage.setItem('visitorId', visitorId);
-        return visitorId;
-      })
-      .catch(error => {
-        console.error('获取visitorId时出错：', error);
-      });
-  }
-}
-
-// 检查localStorage中是否存在storedVisitorId，如果不存在则获取visitorId
-const checkVisitorId = () => {
-  const storedVisitorId = localStorage.getItem('visitorId');
-  if (!storedVisitorId) {
-    getVisitorId();
-  } else {
-    console.log("调用已存储识别码:" + storedVisitorId);
-  }
-}
-
 function insertAIDiv(selector) {
   // 首先移除现有的 "post-TianliGPT" 类元素（如果有的话）
   removeExistingAIDiv();
@@ -101,43 +64,43 @@ function removeExistingAIDiv() {
 }
 
 var tianliGPT = {
-  //读取文章中的所有文本和标题
+  //读取文章中的所有文本
   getTitleAndContent: function() {
     try {
       const title = document.title;
       const container = document.querySelector(tianliGPT_postSelector);
       if (!container) {
         console.warn('TianliGPT：找不到文章容器。请尝试将引入的代码放入到文章容器之后。如果本身没有打算使用摘要功能可以忽略此提示。');
-        return { title: '', content: '' };
+        return '';
       }
       const paragraphs = container.getElementsByTagName('p');
       const headings = container.querySelectorAll('h1, h2, h3, h4, h5');
       let content = '';
-
+  
       for (let h of headings) {
         content += h.innerText + ' ';
       }
-
+  
       for (let p of paragraphs) {
         // 移除包含'http'的链接
         const filteredText = p.innerText.replace(/https?:\/\/[^\s]+/g, '');
         content += filteredText;
       }
-
+  
       const combinedText = title + ' ' + content;
       let wordLimit = 1000;
       if (typeof tianliGPT_wordLimit !== "undefined") {
         wordLimit = tianliGPT_wordLimit;
       }
       const truncatedText = combinedText.slice(0, wordLimit);
-      return { title, content: truncatedText };
+      return truncatedText;
     } catch (e) {
       console.error('TianliGPT错误：可能由于一个或多个错误导致没有正常运行，原因出在获取文章容器中的内容失败，或者可能是在文章转换过程中失败。', e);
-      return { title: '', content: '' };
+      return '';
     }
   },
-
-  fetchTianliGPT: async function(content, title, recommendation, visitorId) {
+  
+  fetchTianliGPT: async function(content) {
     if (!tianliGPT_key) {
       return "没有获取到key，代码可能没有安装正确。如果你需要在tianli_gpt文件引用前定义tianliGPT_key变量。详细请查看文档。";
     }
@@ -146,41 +109,41 @@ var tianliGPT = {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
     var url = window.location.href;
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}${recommendation ? `&user_openid=${visitorId}` : ''}&title=${encodeURIComponent(title)}`;
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
-
+  
     try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), timeout);
-      const response = await fetch(apiUrl, { signal: controller.signal });
-      if (response.ok) {
-        const data = await response.json();
-        return data.summary;
-      } else {
-        if (response.status === 402) {
-          document.querySelectorAll('.post-TianliGPT').forEach(el => {
-            el.style.display = 'none';
-          });
-        }
-        throw new Error('TianliGPT：余额不足，请充值后请求新的文章');
-      }
-    } catch (error) {
-      if (error.name === 'AbortError') {
-        if (window.location.hostname === 'localhost') {
-          console.warn('警告：请勿在本地主机上测试 API 密钥。');
-          return '获取文章摘要超时。请勿在本地主机上测试 API 密钥。';
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeout);
+        const response = await fetch(apiUrl, { signal: controller.signal });
+        if (response.ok) {
+            const data = await response.json();
+            return data.summary;
         } else {
-          console.error('请求超时');
-          return '获取文章摘要超时。当你出现这个问题时，可能是key或者绑定的域名不正确。也可能是因为文章过长导致的 AI 运算量过大，您可以稍等一下然后刷新页面重试。';
+            if (response.status === 402) {
+                document.querySelectorAll('.post-TianliGPT').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+            throw new Error('TianliGPT：余额不足，请充值后请求新的文章');
         }
-      } else {
-        console.error('请求失败：', error);
-        return '获取文章摘要失败，请稍后再试。';
-      }
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            if (window.location.hostname === 'localhost') {
+                console.warn('警告：请勿在本地主机上测试 API 密钥。');
+                return '获取文章摘要超时。请勿在本地主机上测试 API 密钥。';
+            } else {
+                console.error('请求超时');
+                return '获取文章摘要超时。当你出现这个问题时，可能是key或者绑定的域名不正确。也可能是因为文章过长导致的 AI 运算量过大，您可以稍等一下然后刷新页面重试。';
+            }
+        } else {
+            console.error('请求失败：', error);
+            return '获取文章摘要失败，请稍后再试。';
+        }
     }
   },
 
-  aiShowAnimation: function(text) {
+  aiShowAnimation: function (text) {
     const element = document.querySelector(".tianliGPT-explanation");
     if (!element) {
       return;
@@ -224,7 +187,7 @@ var tianliGPT = {
             element.innerHTML = text;
             element.style.display = "block";
             tianliGPTIsRunning = false;
-            observer.disconnect(); // 暂停监听
+            observer.disconnect();// 暂停监听
           }
         }
         requestAnimationFrame(animate);
@@ -242,27 +205,25 @@ var tianliGPT = {
       }
     }, { threshold: 0 });
     let post_ai = document.querySelector('.post-TianliGPT');
-    observer.observe(post_ai); //启动新监听
+    observer.observe(post_ai);//启动新监听
 
   },
 }
 
-function runTianliGPT(visitorId) {
+function runTianliGPT() {
   insertAIDiv(tianliGPT_postSelector);
-  const { title, content } = tianliGPT.getTitleAndContent();
+  const content = tianliGPT.getTitleAndContent();
   if (content) {
     console.log('TianliGPT本次提交的内容为：' + content);
   }
-  tianliGPT.fetchTianliGPT(content, title, typeof tianliGPT_recommendation !== "undefined" ? tianliGPT_recommendation : false, visitorId).then(summary => {
+  tianliGPT.fetchTianliGPT(content).then(summary => {
     tianliGPT.aiShowAnimation(summary);
   })
 }
 
 function checkURLAndRun() {
   if (typeof tianliGPT_postURL === "undefined") {
-    getVisitorId().then(visitorId => {
-      runTianliGPT(visitorId); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
-    });
+    runTianliGPT(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
     return;
   }
 
@@ -279,9 +240,7 @@ function checkURLAndRun() {
     const currentURL = window.location.href;
 
     if (urlPattern.test(currentURL)) {
-      getVisitorId().then(visitorId => {
-        runTianliGPT(visitorId); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
-      });
+      runTianliGPT(); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
     } else {
       console.log("TianliGPT：因为不符合自定义的链接规则，我决定不执行摘要功能。");
     }
@@ -290,5 +249,4 @@ function checkURLAndRun() {
   }
 }
 
-checkVisitorId();
 checkURLAndRun();
