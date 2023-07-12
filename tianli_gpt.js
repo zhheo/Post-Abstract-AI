@@ -109,7 +109,8 @@ var tianliGPT = {
       return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
     }
     var url = window.location.href;
-    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}`;
+    const title = document.title;
+    const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
     const timeout = 20000; // 设置超时时间（毫秒）
   
     try {
