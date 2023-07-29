@@ -26,15 +26,15 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 
 我们可以通过在网页中嵌入TianliGPT的服务支持，让TianliGPT能够获取到你需要提交的内容。
 
-你需要在博客后面位置引入js和css（**引入的位置应该在文章之后**）
+你需要在博客后面位置引入js和css（**引入在网站的任意位置**）
 
 ```html
-<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.11/tianli_gpt.css">
+<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.12/tianli_gpt.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 </script>
-<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.11/tianli_gpt.js"></script>
+<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.12/tianli_gpt.js"></script>
 ```
 
 如果你使用的是Butterfly主题，可以[在这里查看教程](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2)
@@ -92,10 +92,6 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 更多的参数变量详见[高级文档](/Advanced.md)
 
 ## 升级版本
-
-**⚠️ 非必要，不升级。**
-
-基本上功能是固定下来的，本仓库作为提供稳定的基础服务，更新版本大多数情况是为了做兼容性，所以你的兼容性没有问题，是完全没有必要升级版本。
 
 升级版本方式：只需要将js和css链接中的`@0.5`这种的版本号更改为最新的版本即可。
 
