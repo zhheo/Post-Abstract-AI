@@ -1,7 +1,7 @@
 # Post-Abstract-AI
 
 <p align="center">
-  <img src="https://bu.dusays.com/2023/04/15/643a29d0cf651.png" />
+  <img src="/img/logo.png" />
   <br>
   <br>
   适用于绝大多数博客的文章摘要生成器
@@ -95,11 +95,11 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 
 升级版本方式：只需要将js和css链接中的`@0.5`这种的版本号更改为最新的版本即可。
 
-![](https://bu.dusays.com/2023/04/19/643f7028bce50.png)
+![](/img/update.png)
 
 最新版本的位置：
 
-![](https://bu.dusays.com/2023/04/19/643f709998402.png)
+![](/img/update2.png)
 
 ## 开发团队
 
