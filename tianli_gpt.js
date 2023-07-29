@@ -153,6 +153,14 @@ var tianliGPT = {
     if (tianliGPTIsRunning) {
       return;
     }
+
+    // 检查用户是否已定义tianliGPT_typingAnimate并且其值为false
+    if (typeof tianliGPT_typingAnimate !== "undefined" && !tianliGPT_typingAnimate) {
+      // 如果用户已定义tianliGPT_typingAnimate并且其值为false，则立即显示完整文本
+      element.innerHTML = text;
+      return;
+    }
+
     tianliGPTIsRunning = true;
     const typingDelay = 25;
     const waitingTime = 1000;

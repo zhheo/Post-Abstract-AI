@@ -21,3 +21,9 @@
 可以设置提交的字数限制，默认为1000字。这意味着每个文章最多消耗你1000字符（因为只有提交扣费，生成文本不扣费）。你可以降低字符数来让扣费变得更少，也可以增加字符数让文章变得更准确。上限为5000，超过5000字符将被截断。
 
 例如：`let tianliGPT_wordLimit = 1000;`
+
+### tianliGPT_typingAnimate
+
+当此变量为false时，那么不执行打字动画。
+
+例如：`let tianliGPT_typingAnimate = false;`
