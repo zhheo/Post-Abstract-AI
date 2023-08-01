@@ -65,7 +65,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
-| [typecho-joe](#27) | .joe_post .joe_detail__article | 无需添加 | 无 |
+| [typecho-joe](/issues/27) | .joe_post .joe_detail__article | 无需添加 | 无 |
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
