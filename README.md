@@ -26,7 +26,7 @@ TianliGPT是一个基于GPT-3.5的文字摘要生成工具，你可以将需要�
 
 我们可以通过在网页中嵌入TianliGPT的服务支持，让TianliGPT能够获取到你需要提交的内容。
 
-你需要在博客后面位置引入js和css（**引入在网站的任意位置**）
+1. 你需要在博客后面位置引入js和css（**引入在网站的任意位置**）
 
 ```html
 <link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.13/tianli_gpt.css">
@@ -37,9 +37,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 <script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.13/tianli_gpt.js"></script>
 ```
 
-如果你使用的是Butterfly主题，可以[在这里查看教程](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2)
-
-我们需要更改一些参数来让这个模型运作起来。
+2. 我们需要更改一些参数来让这个模型运作起来。
 
 `tianliGPT_postSelector`和`tianliGPT_key`
 
@@ -67,6 +65,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
+| [typecho-joe](#27) | .joe_post .joe_detail__article | 无需添加 | 无 |
 
 如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
 
@@ -76,10 +75,8 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 
 - 相比实时请求openai，使用tianliGPT可以让你请求过的内容不再消耗key，适合生产环境。
 - 相比实时请求openai，使用tianliGPT可以在国内更快速的获取摘要。
-
-- key消耗完毕，已经请求过的内容仍然可以继续请求，避免了被恶意请求造成的资金损失和业务停摆。
-
 - 符合中国大陆法律法规。
+- key消耗完毕，已经请求过的内容仍然可以继续请求，避免了被恶意请求造成的资金损失和业务停摆。
 
 购买完成后，进入管理后台：https://summary.zhheo.com/
 
