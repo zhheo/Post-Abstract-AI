@@ -55,6 +55,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
 | hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
+| halo-theme-xue | #container .article-content #lightGallery | 无需添加 | 无 |
 | [wordpress: argon](https://flowus.cn/08d8f6e4-d487-40b9-951e-8c0c3df7506f) | #post_content | 无需添加 | 无 |
 | wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/*.html` | 无 |
 | wordpress：pix | .single-content | `https://*/*.html` | 无 |
@@ -66,8 +67,9 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
 | [typecho-joe](/issues/27) | .joe_post .joe_detail__article | 无需添加 | 无 |
+| typecho-bearsimple | #post-content #bearsimple-images | 无需添加 | 无 |
 
-如果你没有在上面看到你的主题，可以到issues中提交你的主题名称，我会进行适配。
+如果你没有在上面看到你的主题，查看[通用教程](https://flowus.cn/zhheo/7a353126-f225-4e5c-8c11-f5adefe85b7f)，手把手教你如何使用前端选择器。
 
 ### tianliGPT_key
 
