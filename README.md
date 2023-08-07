@@ -7,6 +7,7 @@
   适用于绝大多数博客的文章摘要生成器
 </p>
 
+[随机访问已经支持TianliGPT的博客](https://summary.zhheo.com/static/matrix.html)
 
 最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
 
