@@ -7,6 +7,8 @@
   适用于绝大多数博客的文章摘要生成器
 </p>
 
+[官方文档](https://flowus.cn/zhheo/share/3d6d616b-e183-436e-8e3e-2b177f99e941)
+
 [随机访问已经支持TianliGPT的博客](https://summary.zhheo.com/static/matrix.html)
 
 最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
@@ -61,7 +63,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/*.html` | 无 |
 | wordpress：pix | .single-content | `https://*/*.html` | 无 |
 | wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
-| wordpress: 子比主题 | .single-post .wp-posts-content | 无需添加 | 无 |
+| [wordpress: 子比主题](https://flowus.cn/88b69f42-e0f7-482c-9941-24a06c97d6d0) | .single-post .wp-posts-content | 无需添加 | 无 |
 | wordpress: CorePress | .post-content-content | 无需添加 | 无 |
 | wordpress: OneNav | .post-template-default .panel-body | 无需添加 | 无 |
 | Siuyo/Ying | .post-content | `https://*/*.html` | 需使用[定制JS](/custom/README.md) |
@@ -69,8 +71,11 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 | typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
 | [typecho-joe](/issues/27) | .joe_post .joe_detail__article | 无需添加 | 无 |
 | typecho-bearsimple | #post-content #bearsimple-images | 无需添加 | 无 |
+| typecho-bearhoney | .post-content-block .content | 无需添加 | 无 |
 
 如果你没有在上面看到你的主题，查看[通用教程](https://flowus.cn/zhheo/7a353126-f225-4e5c-8c11-f5adefe85b7f)，手把手教你如何使用前端选择器。
+
+**如果你写了你的主题适配教程，欢迎在issues里投稿，我会收录到官方文档中，帮助更多的小伙伴搭建。**
 
 ### tianliGPT_key
 
@@ -89,7 +94,9 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 
 ## 高级技巧
 
-更多的参数变量详见[高级文档](/Advanced.md)
+更多的参数变量详见[高级文档](https://flowus.cn/9be089e8-667e-4b0e-93c3-ad69697ce673)
+
+例如关闭文字动画、限制每次提交最大字数等。
 
 ## 升级版本
 
