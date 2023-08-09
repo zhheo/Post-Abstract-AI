@@ -5,9 +5,9 @@
   <br>
   <br>
   适用于绝大多数博客的文章摘要生成器
+  <br>
+  <a href="https://flowus.cn/zhheo/share/3d6d616b-e183-436e-8e3e-2b177f99e941">官方文档</a>
 </p>
-
-[官方文档](https://flowus.cn/zhheo/share/3d6d616b-e183-436e-8e3e-2b177f99e941)
 
 [随机访问已经支持TianliGPT的博客](https://summary.zhheo.com/static/matrix.html)
 
