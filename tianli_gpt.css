@@ -260,7 +260,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  transition: all 0.3s, background-color 0s;
+  position: absolute;
+  right: 32px;
 }
 
 ins.adsbygoogle {
