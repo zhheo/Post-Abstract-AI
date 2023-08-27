@@ -171,6 +171,7 @@
   padding: 0 12px;
   cursor: default;
   user-select: none;
+  position: relative;
 }
 
 .tianliGPT-title-text {
@@ -262,7 +263,7 @@
   justify-content: center;
   transition: all 0.3s, background-color 0s;
   position: absolute;
-  right: 32px;
+  right: 12px;
 }
 
 ins.adsbygoogle {
