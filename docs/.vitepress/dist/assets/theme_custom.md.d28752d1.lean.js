@@ -1,0 +1,1 @@
+import{_ as s,o as p,c as a,Q as t}from"./chunks/framework.867ce416.js";const d=JSON.parse('{"title":"通用教程","description":"","frontmatter":{},"headers":[],"relativePath":"theme/custom.md","filePath":"theme/custom.md"}'),l={name:"theme/custom.md"},o=t("",35),n=[o];function e(c,r,i,E,h,y){return p(),a("div",null,n)}const m=s(l,[["render",e]]);export{d as __pageData,m as default};
