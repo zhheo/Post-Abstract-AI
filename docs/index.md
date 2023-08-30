@@ -13,7 +13,7 @@ hero:
       link: https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=102056038&redirect_uri=https%3A%2F%2Fsummary.zhheo.com%2Fqq&scope=get_unionid
     - theme: alt
       text: 文档
-      link: /Introduction
+      link: /introduction
     - theme: alt
       text: 交流
       link: https://pd.qq.com/s/7cx85i9l0
