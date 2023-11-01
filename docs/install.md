@@ -36,6 +36,12 @@ TianliGPT适用于几乎所有主题，你可以轻松的更改几个变量，�
 | typecho-joe | .joe_post .joe_detail__article | 无需添加 | 无 |
 | typecho-void | .articleBody | 无需添加 | 无 |
 
+## 自行开发
+
+如果你有前端编写能力，可以通过api开发属于自己的tianliGPT。你可以通过API文档实现自己想要的功能。
+
+[前往API文档](/api)
+
 ## 教程投稿
 
 如果您已经编写了关于TianliGPT部署的教程，欢迎投稿。

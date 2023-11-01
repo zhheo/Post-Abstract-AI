@@ -53,6 +53,7 @@ export default defineConfig({
         text: '高级',
         items: [
           {text: '配置参数', link: '/parameters'},
+          {text: 'API文档', link: '/api'},
           { text: '更多项目', link: '/more'}
         ]
       }
