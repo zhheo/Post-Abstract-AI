@@ -105,7 +105,7 @@
   --style-border-forever: 2px solid var(--heo-main);
 }
 
-[data-theme=dark], body.dark, body.dark-theme,[eagle-extension-theme="light"] {
+[data-theme=dark], body.dark, body.dark-theme,[eagle-extension-theme="dark"],body.dark-open,[color-scheme=dark] {
   --heo-theme: #f2b94b;
   --heo-theme-op: #f2b94b23;
   --heo-theme-op-deep: #f2b94bdd;
@@ -188,7 +188,7 @@
   border: var(--style-border-always);
   font-size: 15px;
   line-height: 1.4;
-  display: flex;
+  display: block;
 }
 
 .tianliGPT-suggestions {
@@ -217,53 +217,81 @@
 }
 
 .blinking-cursor {
-  background-color: var(--heo-main);
-  width: 10px;
-  height: 16px;
+  background-color: var(--heo-lighttext);
+  width: 14px;
+  height: 14px;
+  border-radius: 16px;
   display: inline-block;
   vertical-align: middle;
-  animation: blinking-cursor 0.5s infinite;
-  -webkit-animation: blinking-cursor 0.5s infinite;
+  animation: blinking-cursor 2s infinite;
+  -webkit-animation: blinking-cursor 2s infinite;
   margin-left: 4px;
+  margin-bottom: 3px;
+  transform: scale(0.6);
 }
 
 @keyframes blinking-cursor {
   0% {
-    opacity: 1;
+    transform: scale(0.6);
   }
 
-  40% {
-    opacity: 1;
+  25% {
+    transform: scale(1);
   }
 
   50% {
-    opacity: 0;
+    transform: scale(0.6);
   }
 
-  90% {
-    opacity: 0;
+  75% {
+    transform: scale(1);
   }
 
   100% {
-    opacity: 1;
+    transform: scale(0.6);
   }
 }
 
 .tianliGPT-tag {
   font-size: 12px;
   background-color: var(--heo-lighttext);
+  box-shadow: var(--heo-shadow-main);
   color: var(--heo-card-bg);
-  font-weight: bold;
-  border-radius: 4px;
+  font-weight: 700;
+  border-radius: 12px;
   margin-left: auto;
-  line-height: 1;
-  padding: 4px;
+  line-height: 12px;
+  padding: 6px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s, background-color 0s;
-  position: absolute;
-  right: 12px;
+  transition: .3s;
+}
+
+.tianliGPT-tag.loadingAI {
+  animation-duration: 2s;
+  animation-name: AILoading;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: default;
+}
+
+@keyframes AILoading {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 ins.adsbygoogle {
@@ -293,53 +321,23 @@ ins.adsbygoogle {
 }
 
 .tianliGPT-title-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: var(--heo-lighttext);
+  color: var(--heo-card-bg);
+  font-size: 14px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .tianliGPT-title-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--heo-main);
+  width: 14px;
+  height: 14px;
+  fill: var(--heo-card-bg);
 }
 
 .tianliGPT-title-icon svg path {
-  fill: var(--heo-main);
-}
-
-.tianliGPT-tag svg {
-  fill:#7e8a97;
-}
-
-@keyframes breathe {
-    0% {
-        -webkit-transform: scale(.97);
-        -moz-transform: scale(.97);
-        -o-transform: scale(.97);
-        -ms-transform: scale(.97);
-        transform: scale(.97)
-    }
-
-    50% {
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1)
-    }
-
-    100% {
-        -webkit-transform: scale(.97);
-        -moz-transform: scale(.97);
-        -o-transform: scale(.97);
-        -ms-transform: scale(.97);
-        transform: scale(.97)
-    }
-}
-
-.tianliGPT-tag.playing svg {
-  animation: 0.5s linear 0s infinite normal none running breathe;
-  transform-origin: center;
-  width: 20px;
-  height: 20px;
+  fill: var(--heo-card-bg);
 }

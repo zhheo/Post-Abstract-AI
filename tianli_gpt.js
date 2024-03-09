@@ -104,11 +104,15 @@ function tianliGPT(usePjax) {
 
     fetchTianliGPT: async function(content) {
       if (!tianliGPT_key) {
-        return "没有获取到key，代码可能没有安装正确。如果你需要在tianli_gpt文件引用前定义tianliGPT_key变量。详细请查看文档。";
+        let info = "没有获取到key，代码可能没有安装正确。如果你需要在tianli_gpt文件引用前定义tianliGPT_key变量。详细请查看文档。"
+        tianliGPT.aiShowAnimation(info)
+        return info;
       }
 
       if (tianliGPT_key === "5Q5mpqRK5DkwT1X9Gi5e") {
-        return "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。";
+        let info = "请购买 key 使用，如果你能看到此条内容，则说明代码安装正确。"
+        tianliGPT.aiShowAnimation(info)
+        return info;
       }
       var url = window.location.href;
       const title = document.title;
@@ -130,8 +134,17 @@ function tianliGPT(usePjax) {
             document.querySelectorAll('.post-TianliGPT').forEach(el => {
               el.style.display = 'none';
             });
+            let info = "Key错误或余额不足，请充值后请求新的文章"
+            throw new Error('TianliGPT：'+info);
           }
-          throw new Error('TianliGPT：余额不足，请充值后请求新的文章');
+          if (response.status === 403) {
+            let info = "请求来源于Key不匹配，可能因为这个Key没有在summary.zhheo.com进行域名绑定。"
+            tianliGPT.aiShowAnimation(info)
+            return info
+          }
+          if (response.status === 405) {
+            let info = "你的网站设置了Referrer-Policy为same-origin，这会导致Tianli无法验证你的请求来源。TianliGPT依赖refer进行来源判断，特别是meta标签的referrer属性需要修改，至少为origin。例如：<meta name=\"referrer\" content=\"origin\">"
+          }
         }
       } catch (error) {
         if (error.name === 'AbortError') {
@@ -174,6 +187,10 @@ function tianliGPT(usePjax) {
       element.style.display = "block";
       element.innerHTML = "生成中..." + '<span class="blinking-cursor"></span>';
 
+      //给AItag添加动画
+      const aiTag = document.querySelector('.tianliGPT-tag');
+      aiTag.classList.add('loadingAI');
+
       let animationRunning = true;
       let currentIndex = 0;
       let initialAnimation = true;
@@ -202,6 +219,9 @@ function tianliGPT(usePjax) {
               element.style.display = "block";
               tianliGPTIsRunning = false;
               observer.disconnect(); // 暂停监听
+              //给AItag停止动画
+              const aiTag = document.querySelector('.tianliGPT-tag');
+              aiTag.classList.remove('loadingAI');
             }
           }
           requestAnimationFrame(animate);
@@ -286,67 +306,6 @@ document.addEventListener('click', function (event) {
     playAudio();
   }
 });
-
-var audioPlayer = null; // 用于存储音频播放器对象
-function playAudio() {
-  if (audioPlayer && !audioPlayer.paused) {
-    audioPlayer.pause();
-  } else {
-    if (!audioPlayer) {
-      const buttonDiv = document.querySelector('.tianliGPT-tag');
-      const audioId = buttonDiv.dataset.audioId;
-
-      if (!audioId) {
-        console.error('未找到音频 ID');
-        return;
-      }
-
-      const audioUrl = `https://summary.tianli0.top/audio?id=${encodeURIComponent(audioId)}&key=${encodeURIComponent(tianliGPT_key)}`;
-
-      audioPlayer = new Audio(audioUrl);
-      audioPlayer.addEventListener('ended', () => {
-        buttonDiv.classList.remove('playing');
-      });
-
-      audioPlayer.addEventListener('play', () => {
-        buttonDiv.classList.add('playing');
-      });
-
-      audioPlayer.addEventListener('pause', () => {
-        buttonDiv.classList.remove('playing');
-      });
-    }
-
-    setTimeout(() => {
-      audioPlayer.play().catch(error => {
-        console.error('播放音频失败:', error);
-      });
-    }, 100); // 添加延迟以确保播放请求能够正常执行
-  }
-
-  const buttonDiv = document.querySelector('.tianliGPT-tag');
-
-  buttonDiv.addEventListener('click', function() {
-    buttonDiv.classList.toggle('playing');
-  });
-
-  const svgAnimation = '<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1692880829044" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2346" data-darkreader-inline-fill="" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"><path d="M512 1024a512 512 0 1 0 0-1024 512 512 0 1 0 0 1024z m0-704a192 192 0 1 1 0 384 192 192 0 1 1 0-384z" p-id="2347"></path></svg>';
-
-  if (buttonDiv.classList.contains('playing')) {
-    buttonDiv.innerHTML = svgAnimation;
-    buttonDiv.style.animation = '';
-    buttonDiv.style.color = '#ff0000';
-    buttonDiv.style.backgroundColor = 'transparent';
-    buttonDiv.style.padding = '0';
-  } else {
-    buttonDiv.innerHTML = svgAnimation;
-    buttonDiv.style.animation = '';
-    buttonDiv.style.color = '#000000';
-    buttonDiv.style.backgroundColor = 'transparent';
-    buttonDiv.style.padding = '0';
-  }
-}
-
 
 document.addEventListener('click', function (event) {
   const target = event.target;
