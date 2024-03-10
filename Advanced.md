@@ -27,3 +27,9 @@
 当此变量为false时，那么不执行打字动画。
 
 例如：`let tianliGPT_typingAnimate = false;`
+
+### tianliGPT_Title
+
+当设置此变量后，TianGPT顶部的名称“AI摘要”可以被修改。
+
+例如：`let tianliGPT_Title = '宇宙无敌智能摘要';`
