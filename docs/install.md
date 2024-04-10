@@ -19,6 +19,7 @@ TianliGPT适用于几乎所有主题，你可以轻松的更改几个变量，�
 | hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
 | hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
+| [hexo-solitude-solitude](https://github.com/valor-x/hexo-theme-solitude) | 无需添加 | 无需添加 | 无 
 | hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
 | [halo-theme-hao](./theme/halo-theme-hao) | 在后台配置 | 在后台配置 |
 | halo-theme-xue | #container .article-content #lightGallery | 无需添加 | 无 |
