@@ -46,7 +46,8 @@ export default defineConfig({
           {text: 'Argon', link: '/theme/wordpress-argon'},
           {text: '子比主题', link: '/theme/wordpress-zibi'},
           {text: '安知鱼', link: '/theme/hexo-theme-anzhiyu'},
-          {text: 'Hao', link: '/theme/halo-theme-hao'}
+          {text: 'Hao', link: '/theme/halo-theme-hao'},
+          {text: 'solitude', link: '/theme/halo-theme-solitude'}
         ]
       },
       {

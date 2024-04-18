@@ -7,7 +7,7 @@
   .img_container p {
     display: flex; 
     gap: 8px;
-  };
+  }
 </style>
 </div>
 

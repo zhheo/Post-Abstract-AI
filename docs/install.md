@@ -48,7 +48,7 @@ TianliGPT适用于几乎所有主题，你可以轻松的更改几个变量，�
   .img_container p {
     display: flex; 
     gap: 8px;
-  };
+  }
 </style>
 </div>
 

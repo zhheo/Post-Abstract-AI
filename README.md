@@ -73,7 +73,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 
 ## 高级技巧
 
-更多的参数变量详见[高级文档](https://flowus.cn/9be089e8-667e-4b0e-93c3-ad69697ce673)
+更多的参数变量详见[高级文档](https://postsummary.zhheo.com/parameters.html)
 
 例如关闭文字动画、限制每次提交最大字数等。
 

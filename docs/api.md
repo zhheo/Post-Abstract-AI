@@ -46,7 +46,7 @@ noauth
 
 ```javascript
 <!doctype html>
-   <html lang=en>
+   <html lang='en'>
       <title>
          500 Internal Server Error
       </title>
@@ -56,6 +56,7 @@ noauth
       <p>
          The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
       </p>
+</html>
 ```
 
 ## 文章摘要API/摘要 POST
@@ -118,7 +119,7 @@ noauth
 
 ```javascript
 <!doctype html>
-   <html lang=en>
+   <html lang='en'>
       <title>
          500 Internal Server Error
       </title>
@@ -128,6 +129,7 @@ noauth
       <p>
          The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
       </p>
+</html>
 ```
 
 ## 文章摘要API/文章推荐
