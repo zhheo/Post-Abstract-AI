@@ -313,7 +313,7 @@ function tianliGPT(usePjax) {
 
   function checkURLAndRun() {
     if (typeof tianliGPT_postURL === "undefined") {
-      runTianliGPT(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
+      tianliGPTCustomBlackList(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
       return;
     }
 
@@ -330,7 +330,7 @@ function tianliGPT(usePjax) {
       const currentURL = window.location.href;
 
       if (urlPattern.test(currentURL)) {
-        runTianliGPT(); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
+        tianliGPTCustomBlackList(); // 如果当前 URL 符合用户设置的 URL，则执行 runTianliGPT() 函数
       } else {
         console.log("TianliGPT：因为不符合自定义的链接规则，我决定不执行摘要功能。");
       }
@@ -338,6 +338,32 @@ function tianliGPT(usePjax) {
       console.error("TianliGPT：我没有看懂你编写的自定义链接规则，所以我决定不执行摘要功能", error);
     }
   }
+
+  function tianliGPTCustomBlackList() {
+    if (typeof tianliGPT_blacklist === "undefined") {
+      runTianliGPT(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
+      return;
+    }else {
+      // 使用 fetch 请求 JSON 文件
+      fetch(tianliGPT_blacklist)
+          .then(response => response.json())
+          .then(data => {
+              const urlList = data.urls;  // 假设 JSON 文件中有一个 urls 键
+              let currentPageUrl = window.location.href;
+              let isBlacklisted = urlList.some(pattern => {
+                  // 将通配符转换为正则表达式
+                  let regex = new RegExp("^" + pattern.replace(/\*/g, ".*") + "$");
+                  return regex.test(currentPageUrl);
+              });
+
+              // 如果当前页面 URL 不在黑名单中，则执行 tianliGPT
+              if (!isBlacklisted) {
+                runTianliGPT();
+              }
+          })
+          .catch(error => console.error('Error fetching blacklist:', error));
+    }
+}
 
   if (usePjax) {
     checkURLAndRun();
