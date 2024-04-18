@@ -124,13 +124,25 @@ function tianliGPT(usePjax) {
       }
       var url = window.location.href;
       const title = document.title;
-      const apiUrl = `https://summary.tianli0.top/?content=${encodeURIComponent(content)}&key=${encodeURIComponent(tianliGPT_key)}&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+      const apiUrl = 'https://summary.tianli0.top/';
       const timeout = 20000; // 设置超时时间（毫秒）
 
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), timeout);
-        const response = await fetch(apiUrl, { signal: controller.signal });
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            content: content,
+            key: tianliGPT_key,
+            url: window.location.href,
+            title: document.title
+          }),
+          signal: controller.signal
+        });
         clearTimeout(timeoutId); // 清除定时器，避免不必要的abort
 
         if (response.ok) {

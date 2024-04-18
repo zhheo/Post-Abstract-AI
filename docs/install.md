@@ -20,6 +20,7 @@ TianliGPT适用于几乎所有主题，你可以轻松的更改几个变量，�
 | [hexo-theme-redefine](https://github.com/zhheo/Post-Abstract-AI/issues/42)      | .article-content.markdown-body       | 无需添加 | 无 |
 | [hexo-theme-stellar](https://github.com/zhheo/Post-Abstract-AI/issues/1) | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
+| [hexo-theme-solitude](./theme/hexo-theme-solitude) | #post #post-body | 无需添加 | 无 |
 | hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
 | [halo-theme-hao](./theme/halo-theme-hao) | 在后台配置 | 在后台配置 |
 | halo-theme-xue | #container .article-content #lightGallery | 无需添加 | 无 |

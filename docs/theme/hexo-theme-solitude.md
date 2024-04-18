@@ -1,5 +1,16 @@
 ## hexo-theme-solitude
 
+<div class="img_container">
+
+![已接入文章摘要](https://bu.dusays.com/2024/04/18/6620a11060052.webp)
+<style>
+  .img_container p {
+    display: flex; 
+    gap: 8px;
+  };
+</style>
+</div>
+
 详细配置信息前往 [Solitude 文档](https://solitude-docs.efu.me/third_party/tianliai) 查看。
 
 ```yaml
