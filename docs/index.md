@@ -9,7 +9,7 @@ hero:
   tagline: 使用文档
   actions:
     - theme: brand
-      text: 登录后台
+      text: 使用QQ登录
       link: https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=102056038&redirect_uri=https%3A%2F%2Fsummary.zhheo.com%2Fqq&scope=get_unionid
     - theme: alt
       text: 文档

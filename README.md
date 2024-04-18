@@ -50,28 +50,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 
 这里列出一些常见博客主题的选择器值（部分未经过测试，如果有问题欢迎反馈）：
 
-| 主题名称             | tianliGPT_postSelector         | tianliGPT_postURL | 备注 |
-| -------------------- | ------------------------ | --- | --- |
-| [hexo-theme-butterfly](https://flowus.cn/zhheo/share/927667b2-ba27-42b1-98f2-8fb184720ed2) | #post #article-container | 无需添加 | 无 |
-| [hexo-theme-fluid](https://flowus.cn/zhheo/share/a8c7101e-9b06-4ec8-9063-0fe3eef31f5c) | #board .post-content | 无需添加 | 无 |
-| hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
-| hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
-| hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
-| hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
-| halo-theme-xue | #container .article-content #lightGallery | 无需添加 | 无 |
-| [wordpress: argon](https://flowus.cn/08d8f6e4-d487-40b9-951e-8c0c3df7506f) | #post_content | 无需添加 | 无 |
-| wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/*.html` | 无 |
-| wordpress：pix | .single-content | `https://*/*.html` | 无 |
-| wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
-| [wordpress: 子比主题](https://flowus.cn/88b69f42-e0f7-482c-9941-24a06c97d6d0) | .single-post .wp-posts-content | 无需添加 | 无 |
-| wordpress: CorePress | .post-content-content | 无需添加 | 无 |
-| wordpress: OneNav | .post-template-default .panel-body | 无需添加 | 无 |
-| valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
-| typecho-bearsimple | #post-content #bearsimple-images | 无需添加 | 无 |
-| typecho-bearhoney | .post-content-block .content | 无需添加 | 无 |
-| typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
-| [typecho-joe](/issues/27) | .joe_post .joe_detail__article | 无需添加 | 无 |
-| [typecho-void](/issues/32) | .articleBody | 无需添加 | 无 |
+[查看主题适配文档](https://postsummary.zhheo.com/install.html)
 
 如果你没有在上面看到你的主题，查看[通用教程](https://flowus.cn/zhheo/7a353126-f225-4e5c-8c11-f5adefe85b7f)，手把手教你如何使用前端选择器。
 
@@ -79,7 +58,7 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 
 ### tianliGPT_key
 
-到[爱发电](https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00)中购买，10元5万字符（限时折扣9元）。请求过的内容再次请求不会消耗key，可以无限期使用。
+到[爱发电](https://store.zhheo.com?cid=1&mid=3)中购买，10元5万字符（限时折扣9元）。请求过的内容再次请求不会消耗key，可以无限期使用。
 
 - 相比实时请求openai，使用tianliGPT可以让你请求过的内容不再消耗key，适合生产环境。
 - 相比实时请求openai，使用tianliGPT可以在国内更快速的获取摘要。
@@ -127,3 +106,9 @@ zhheo@qq.com
 [Post-Summary-AI](https://github.com/qxchuckle/Post-Summary-AI) - 轻笑开发的博客摘要生成工具
 
 [hexo-ai-excerpt](https://github.com/rootlexblog/hexo-ai-excerpt) - 在本地部署时添加AI摘要
+
+# vitepress
+
+npm run docs:build
+
+npm run docs:dev

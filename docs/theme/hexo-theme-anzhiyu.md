@@ -1,5 +1,7 @@
 # hexo-theme-anzhiyu
 
+![原生支持文章摘要](https://bu.dusays.com/2024/04/18/6620a11060052.webp)
+
 以下内容来自[安知鱼主题文档](https://docs.anheyu.com/advanced/#ai-%E6%91%98%E8%A6%81)
 
 # 文章顶部ai摘要

@@ -25,8 +25,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Released under the Apache-2.0 license',
-      copyright: 'Copyright © 2023 张洪Heo'
+      message: '基于TianliGPT构建，由张洪Heo与Tianli设计与开发',
+      copyright: 'Copyright © 2024 张洪Heo 京ICP备19051325号-2'
     },
 
     sidebar: [
@@ -38,7 +38,7 @@ export default defineConfig({
         ]
       },
       {
-        text: '安装',
+        text: '主题适配',
         items: [
           {text: '通用教程', link: '/theme/custom'},
           {text: 'Butterfly', link: '/theme/hexo-theme-butterfly'},

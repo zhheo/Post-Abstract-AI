@@ -4,6 +4,8 @@ TianliGPT可以配置你想要的参数。
 
 以下都是可选变量，如果能正常运行，可以不填写。添加方式就是在填写key的那一段代码的`</script>`之前添加即可。
 
+![](/img/advanced.png)
+
 例如：
 
 ```HTML
@@ -20,9 +22,7 @@ let tianliGPT_key = '这是你的key';
 </script>
 ```
 
-## tianliGPT_postURL
-
-可选值
+### tianliGPT_postURL
 
 当主题存在其他页面和文章页面结构相同时，可以通过通配符url域名来实现只在指定域名中执行。
 
@@ -30,9 +30,7 @@ let tianliGPT_key = '这是你的key';
 
 只会在地址含有`/p/`的域名中执行。避免非文章页面添加。
 
-## tianliGPT_wordLimit
-
-可选值
+### tianliGPT_wordLimit
 
 ⚠️危险：更改此变量损失已消耗过的key，因为你提交的内容发生了变化。
 
@@ -42,8 +40,12 @@ let tianliGPT_key = '这是你的key';
 
 ### tianliGPT_typingAnimate
 
-可选值
-
 当此变量为false时，那么不执行打字动画。
 
 例如：`let tianliGPT_typingAnimate = false;`
+
+### tianliGPT_Title
+
+当设置此变量后，TianGPT顶部的名称“AI摘要”可以被修改。
+
+例如：`let tianliGPT_Title = '宇宙无敌智能摘要';`

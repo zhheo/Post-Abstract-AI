@@ -17,24 +17,41 @@ TianliGPT适用于几乎所有主题，你可以轻松的更改几个变量，�
 | [hexo-theme-butterfly](./theme/hexo-theme-butterfly) | #post #article-container | 无需添加 | 无 |
 | [hexo-theme-fluid](./theme/hexo-theme-fluid) | #board .post-content | 无需添加 | 无 |
 | hexo-theme-next      | #posts .post-body        | 无需添加 | 无 |
-| hexo-theme-stellar | .md-text.content.post | 无需添加 | 无 |
+| [hexo-theme-redefine](https://github.com/zhheo/Post-Abstract-AI/issues/42)      | .article-content.markdown-body       | 无需添加 | 无 |
+| [hexo-theme-stellar](https://github.com/zhheo/Post-Abstract-AI/issues/1) | .md-text.content.post | 无需添加 | 无 |
 | hexo-theme-volantis | #post #post-body | 无需添加 | 无 |
 | hugo-theme-DoIt | .page.single:not(.special) .content | 无需添加 | 无 |
 | [halo-theme-hao](./theme/halo-theme-hao) | 在后台配置 | 在后台配置 |
 | halo-theme-xue | #container .article-content #lightGallery | 无需添加 | 无 |
 | [wordpress: argon](./theme/wordpress-argon) | #post_content | 无需添加 | 无 |
 | wordpress: 7B2 | #primary-home .entry-content | 修改里面的域名：`b2.7b2.com/*.html` | 无 |
-| wordpress：pix | .single-content | `https://*/*.html` | 无 |
+| [wordpress：pix](https://github.com/zhheo/Post-Abstract-AI/issues/8) | .single-content | `https://*/*.html` | 无 |
 | wordpress: Sakurairo | .post .entry-content | 无需添加 | 无 |
 | [wordpress: 子比主题](./theme/wordpress-zibi) | .single-post .wp-posts-content | 无需添加 | 无 |
 | wordpress: CorePress | .post-content-content | 无需添加 | 无 |
-| wordpress: OneNav | .post-template-default .panel-body | 无需添加 | 无 |
+| [wordpress: OneNav](https://github.com/zhheo/Post-Abstract-AI/issues/14) | .post-template-default .panel-body | 无需添加 | 无 |
+| [wordpress: ripro](https://github.com/zhheo/Post-Abstract-AI/issues/26) | .post-template-default .content-wrapper | 无需添加 | 无 |
 | valaxy-theme-yun | .content .markdown-body | `*/posts/*` | 无 |
-| typecho-bearsimple | #post-content #bearsimple-images | 无需添加 | 无 |
-| typecho-bearhoney | .post-content-block .content | 无需添加 | 无 |
-| typecho-handsome | #postpage #md_handsome_origin | 无需添加 | 无 |
-| typecho-joe | .joe_post .joe_detail__article | 无需添加 | 无 |
-| typecho-void | .articleBody | 无需添加 | 无 |
+| [typecho-bearsimple](https://github.com/zhheo/Post-Abstract-AI/issues/29) | #post-content #bearsimple-images | 无需添加 | 无 |
+| [typecho-bearhoney](https://github.com/zhheo/Post-Abstract-AI/issues/30) | .post-content-block .content | 无需添加 | 无 |
+| [typecho-handsome](https://github.com/zhheo/Post-Abstract-AI/issues/12) | #postpage #md_handsome_origin | 无需添加 | 无 |
+| [typecho-joe](https://github.com/zhheo/Post-Abstract-AI/issues/27) | .joe_post .joe_detail__article | 无需添加 | 无 |
+| [typecho-void](https://github.com/zhheo/Post-Abstract-AI/issues/32) | .articleBody | 无需添加 | 无 |
+
+如你撰写了你所用主题的适配教程，或者你是主题的开发者已经完成适配，可以联系`zhheo@qq.com`获取认证或收录教程。
+
+<div class="img_container">
+
+![已接入PostChat](https://bu.dusays.com/2024/04/18/6620a110591b4.webp)![已接入文章摘要](https://bu.dusays.com/2024/04/18/6620a11060052.webp)
+<style>
+  .img_container p {
+    display: flex; 
+    gap: 8px;
+  };
+</style>
+</div>
+
+
 
 ## 自行开发
 
