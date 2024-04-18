@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,Q as l}from"./chunks/framework.867ce416.js";const h=JSON.parse('{"title":"配置参数","description":"","frontmatter":{},"headers":[],"relativePath":"parameters.md","filePath":"parameters.md"}'),p={name:"parameters.md"},t=l("",19),e=[t];function o(c,i,r,y,E,d){return a(),n("div",null,e)}const m=s(p,[["render",o]]);export{h as __pageData,m as default};

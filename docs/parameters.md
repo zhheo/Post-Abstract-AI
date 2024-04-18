@@ -30,6 +30,24 @@ let tianliGPT_key = '这是你的key';
 
 只会在地址含有`/p/`的域名中执行。避免非文章页面添加。
 
+### tianliGPT_blacklist
+
+当你有一些页面不想要使用文章摘要，那么你可以将所有的黑名单放入一个json文件中。例如`blacklist.json`
+
+```json
+{
+  "blackurls": [
+    "https://example.com/somepath/*",
+    "https://*.example.com/",
+    "https://www.example.org/specificpage.html",
+    "http://127.0.0.1:5500/dev.html"
+  ]
+}
+```
+然后添加`tianliGPT_blacklist`变量，将json文件的地址放入进去，例如：
+
+`let tianliGPT_blacklist = 'https://example.com/blacklist.json'`
+
 ### tianliGPT_wordLimit
 
 ⚠️危险：更改此变量损失已消耗过的key，因为你提交的内容发生了变化。

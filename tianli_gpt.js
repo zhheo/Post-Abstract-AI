@@ -348,7 +348,7 @@ function tianliGPT(usePjax) {
       fetch(tianliGPT_blacklist)
           .then(response => response.json())
           .then(data => {
-              const urlList = data.urls;  // 假设 JSON 文件中有一个 urls 键
+              const urlList = data.blackurls;  // 假设 JSON 文件中有一个 urls 键
               let currentPageUrl = window.location.href;
               let isBlacklisted = urlList.some(pattern => {
                   // 将通配符转换为正则表达式

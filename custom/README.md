@@ -6,4 +6,4 @@
 
 js代码替换为：
 
-`<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.16/custom/Siuyo-Ying.js"></script>`
+`<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.17/custom/Siuyo-Ying.js"></script>`
