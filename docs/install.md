@@ -43,7 +43,7 @@ TianliGPT适用于几乎所有主题，你可以轻松的更改几个变量，�
 
 <div class="img_container">
 
-![已接入PostChat](https://bu.dusays.com/2024/04/18/6620a110591b4.webp)![已接入文章摘要](https://bu.dusays.com/2024/04/18/6620a11060052.webp)
+![已接入PostChat](/img/PostChat认证.svg) ![已接入文章摘要](/img/文章摘要认证.svg)
 <style>
   .img_container p {
     display: flex; 

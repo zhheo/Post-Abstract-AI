@@ -1,6 +1,16 @@
 # halo-theme-hao
 
-![原生支持文章摘要](https://bu.dusays.com/2024/04/18/6620a11060052.webp)
+<div class="img_container">
+
+![已接入文章摘要](/img/文章摘要认证.svg)
+
+<style>
+  .img_container p {
+    display: flex; 
+    gap: 8px;
+  }
+</style>
+</div>
 
 以下内容来自[主题文档](https://docs.liuzhihang.com/docs/guide/article.html)
 

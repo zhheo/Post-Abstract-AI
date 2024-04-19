@@ -1,8 +1,9 @@
-## hexo-theme-solitude
+# hexo-theme-solitude
 
 <div class="img_container">
 
-![已接入文章摘要](https://bu.dusays.com/2024/04/18/6620a11060052.webp)
+![已接入文章摘要](/img/文章摘要认证.svg)
+
 <style>
   .img_container p {
     display: flex; 
