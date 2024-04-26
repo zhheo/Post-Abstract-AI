@@ -8,6 +8,11 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/img/logo.png' }]
   ],
 
+  lastUpdated: true,
+  sitemap: {
+    hostname: 'https://postsummary.zhheo.com'
+  },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
