@@ -52,7 +52,7 @@ export default defineConfig({
           {text: '子比主题', link: '/theme/wordpress-zibi'},
           {text: '安知鱼', link: '/theme/hexo-theme-anzhiyu'},
           {text: 'Hao', link: '/theme/halo-theme-hao'},
-          {text: 'Slitude', link: '/theme/hexo-theme-solitude'}
+          {text: 'Solitude', link: '/theme/hexo-theme-solitude'}
         ]
       },
       {

@@ -2,7 +2,7 @@
 
 <div class="img_container">
 
-![已接入文章摘要](/img/文章摘要认证.svg)
+![已接入PostChat](/img/PostChat认证.svg) ![已接入文章摘要](/img/文章摘要认证.svg)
 
 <style>
   .img_container p {
@@ -13,6 +13,30 @@
 </div>
 
 详细配置信息前往 [Solitude 文档](https://solitude-docs.efu.me/third_party/tianliai) 查看。
+
+[PostChat文档](https://docs.efu.me/third_party/postchat)
+
+```yaml
+# Post Chat AI
+# 后台地址：https://ai.tianli0.top/?InviteID=OZ3Z0V2R
+tianli_talk:
+  enable: false
+  title: 智能客服与搜索
+  key: # 购买的key
+  # 默认值
+  # backgroundColor: "var(--efu-main)",
+  # bottom: "60px",
+  option: #https://ai.tianli0.top/codeMaker.html
+  #  defaultInput: false
+  #  upLoadWeb: true
+  #  userTitle: Efu Chat
+  #  userDesc: 你好，我是 Efu 的智能客服，有什么可以帮助你的？
+  #  showInviteLink: 'https://ai.tianli0.top/?InviteID=OZ3Z0V2R'
+  #  blackDom:
+  #    - .aplayer
+```
+
+[文章摘要文档](https://docs.efu.me/third_party/tianliai)
 
 ```yaml
 # 文章摘要AI

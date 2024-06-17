@@ -317,6 +317,10 @@ function tianliGPT(usePjax) {
     },
   }
   function runTianliGPT() {
+    if (typeof tianliGPT_postSelector === 'undefined') {
+      return;
+    }
+    
     insertAIDiv(tianliGPT_postSelector);
     const content = tianliGPT.getTitleAndContent();
     if (content) {
@@ -376,28 +380,31 @@ function tianliGPT(usePjax) {
   }
 
   function tianliGPTCustomBlackList() {
-    if (typeof tianliGPT_blacklist === "undefined") {
-      runTianliGPT(); // 如果没有设置自定义 URL，则直接执行 runTianliGPT() 函数
-      return;
-    }else {
-      // 使用 fetch 请求 JSON 文件
-      fetch(tianliGPT_blacklist)
-          .then(response => response.json())
-          .then(data => {
-              const urlList = data.blackurls;  // 假设 JSON 文件中有一个 urls 键
-              let currentPageUrl = window.location.href;
-              let isBlacklisted = urlList.some(pattern => {
-                  // 将通配符转换为正则表达式
-                  let regex = new RegExp("^" + pattern.replace(/\*/g, ".*") + "$");
-                  return regex.test(currentPageUrl);
-              });
+    if (typeof tianliGPT_blacklist === "undefined" || !tianliGPT_blacklist) {
+        runTianliGPT(); // 如果没有设置自定义 URL 或 URL 为空，则直接执行 runTianliGPT() 函数
+        return;
+    } else {
+        // 使用 fetch 请求 JSON 文件
+        fetch(tianliGPT_blacklist)
+            .then(response => response.json())
+            .then(data => {
+                const urlList = data.blackurls;  // 假设 JSON 文件中有一个 blackurls 键
+                let currentPageUrl = window.location.href;
+                let isBlacklisted = urlList.some(pattern => {
+                    // 将通配符转换为正则表达式
+                    let regex = new RegExp("^" + pattern.replace(/\*/g, ".*") + "$");
+                    return regex.test(currentPageUrl);
+                });
 
-              // 如果当前页面 URL 不在黑名单中，则执行 tianliGPT
-              if (!isBlacklisted) {
-                runTianliGPT();
-              }
-          })
-          .catch(error => console.error('Error fetching blacklist:', error));
+                // 如果当前页面 URL 不在黑名单中，则执行 tianliGPT
+                if (!isBlacklisted) {
+                    runTianliGPT();
+                }
+            })
+            .catch(error => {
+                console.error('请求黑名单失败。Error fetching blacklist:', error);
+                runTianliGPT(); // 请求出错时继续执行 runTianliGPT()
+            });
     }
 }
 
