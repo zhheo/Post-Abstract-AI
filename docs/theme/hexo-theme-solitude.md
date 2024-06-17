@@ -12,7 +12,7 @@
 </style>
 </div>
 
-详细配置信息前往 [Solitude 文档](https://solitude-docs.efu.me/third_party/tianliai) 查看。
+详细配置信息前往 [Solitude 文档](https://solitude.js.org/third_party/tianliai) 查看。
 
 [PostChat文档](https://docs.efu.me/third_party/postchat)
 
