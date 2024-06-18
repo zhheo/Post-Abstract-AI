@@ -1,5 +1,3 @@
-# Post-Abstract-AI
-
 <div align="center">
     <a href="https://summary.zhheo.com/" target="_blank" rel="noopener noreferrer">
         <img src="/img/st.jpg" alt="icon"/>
