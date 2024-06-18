@@ -4,7 +4,7 @@
     <a href="https://summary.zhheo.com/" target="_blank" rel="noopener noreferrer">
         <img src="/img/st.jpg" alt="icon"/>
     </a>
-    <h1 align="center">PostChat</h1>
+    <h1 align="center">文章摘要</h1>
     <span>适用于绝大多数博客的文章摘要生成器</span>
     <br>
     <a href="https://flowus.cn/zhheo/share/3d6d616b-e183-436e-8e3e-2b177f99e941">官方文档</a> · <a href="https://summary.zhheo.com/">管理后台</a>
