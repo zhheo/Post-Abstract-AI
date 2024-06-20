@@ -187,7 +187,7 @@ function tianliGPT(usePjax) {
                 return info;
               case 2:
                 // 你的具体错误处理逻辑，例如显示某个特定的错误信息
-                info = "你正在使用的tianliGPT_key已经被其他网站绑定或不存在，请检查当前网站地址是否在summary.zhheo.com中已绑定。";
+                info = "你正在使用的tianliGPT_key没有绑定当前网站，请检查当前的密钥是否绑定了当前网站地址。可以到summary.zhheo.com中绑定。";
                 tianliGPT.aiShowAnimation(info);
                 return info;
               // 这里可以添加更多的err_code判断分支

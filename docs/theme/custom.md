@@ -7,12 +7,12 @@
 我们需要将下面的代码插入到网页的任何位置。
 
 ```HTML
-<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.18/tianli_gpt.css">
+<link rel="stylesheet" href="https://ai.tianli0.top/static/public/tianli_gpt.min.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 </script>
-<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.18/tianli_gpt.js"></script>
+<script src="https://ai.tianli0.top/static/public/tianli_gpt.min.js"></script>
 ```
 
 我们可以观察一下代码，里面有**tianliGPT_postSelector**和**tianliGPT_key**这两个变量，我们需要更改里面的值来适配不同的主题，并且配置更多内容。

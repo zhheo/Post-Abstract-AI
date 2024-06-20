@@ -31,12 +31,12 @@ TianliGPT是一个专业的文字摘要生成工具，你可以将需要提取�
 1. 你需要在博客后面位置引入js和css（**引入在网站的任意位置**）
 
 ```html
-<link rel="stylesheet" href="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.18/tianli_gpt.css">
+<link rel="stylesheet" href="https://ai.tianli0.top/static/public/tianli_gpt.min.css">
 <script>
 let tianliGPT_postSelector = '#post #article-container';
 let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 </script>
-<script src="https://cdn1.tianli0.top/gh/zhheo/Post-Abstract-AI@0.18/tianli_gpt.min.js"></script>
+<script src="https://ai.tianli0.top/static/public/tianli_gpt.min.js"></script>
 ```
 
 2. 我们需要更改一些参数来让这个模型运作起来。
@@ -75,16 +75,6 @@ let tianliGPT_key = '5Q5mpqRK5DkwT1X9Gi5e';
 更多的参数变量详见[高级文档](https://postsummary.zhheo.com/parameters.html)
 
 例如关闭文字动画、限制每次提交最大字数等。
-
-## 升级版本
-
-升级版本方式：只需要将js和css链接中的`@0.5`这种的版本号更改为最新的版本即可。
-
-![](/img/update.png)
-
-最新版本的位置：
-
-![](/img/update2.png)
 
 ## 开发团队
 
