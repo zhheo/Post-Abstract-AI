@@ -46,6 +46,8 @@ export default defineConfig({
         text: '主题适配',
         items: [
           {text: '通用教程', link: '/theme/custom'},
+          {text: 'Halo博客', link: '/theme/halo'},
+          {text: 'Discuz论坛', link: '/theme/discuz'},
           {text: 'Butterfly', link: '/theme/hexo-theme-butterfly'},
           {text: 'Fluid', link: '/theme/hexo-theme-fluid'},
           {text: 'Argon', link: '/theme/wordpress-argon'},
