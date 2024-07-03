@@ -67,3 +67,9 @@ let tianliGPT_key = '这是你的key';
 当设置此变量后，TianGPT顶部的名称“AI摘要”可以被修改。
 
 例如：`let tianliGPT_Title = '宇宙无敌智能摘要';`
+
+### tianliGPT_injectDom
+
+当设置此变量后，文章摘要将不插入到文章之前，而是此变量对应的节点之前。
+
+例如：`let tianliGPT_injectDom = '.ai-content';`
