@@ -30,6 +30,8 @@ let tianliGPT_key = '这是你的key';
 
 只会在地址含有`/p/`的域名中执行。避免非文章页面添加。
 
+支持正则表达式，要求格式为`/`开头和`/`结尾。例如：`let tianliGPT_postURL = "/^https?://[^/]+/[0-9]{4}/[0-9]{2}/[0-9]{2}/"`
+
 ### tianliGPT_blacklist
 
 当你有一些页面不想要使用文章摘要，那么你可以将所有的黑名单放入一个json文件中。例如`blacklist.json`

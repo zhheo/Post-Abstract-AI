@@ -1,4 +1,4 @@
-# Halo博客
+# Halo插件
 
 <div class="img_container">
 

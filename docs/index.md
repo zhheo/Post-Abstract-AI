@@ -16,7 +16,7 @@ hero:
       link: /introduction
     - theme: alt
       text: 交流
-      link: https://pd.qq.com/s/7cx85i9l0
+      link: http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=SzNZdUDqofY8igbWmQcSuiA0SGZcNg12&authKey=Hxu3Dn8pDoI3%2BhgvQSDodwF2%2Fi9lLh7uTz2txRJZC1eEMJfVsHts373QJs8zwlPU&noverify=0&group_code=574968182
   image:
       src: /img/logo.png
 

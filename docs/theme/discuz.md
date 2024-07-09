@@ -1,4 +1,4 @@
-# Discuz!论坛
+# Discuz!插件
 
 <div class="img_container">
 
