@@ -8,9 +8,9 @@
     <a href="https://flowus.cn/zhheo/share/3d6d616b-e183-436e-8e3e-2b177f99e941">官方文档</a> · <a href="https://summary.zhheo.com/">管理后台</a>
 </div>
 
-[随机访问已经支持TianliGPT的博客](https://summary.zhheo.com/static/matrix.html)
+**目前使用文章摘要的最佳实践是使用PostChat插件。对于只使用文章摘要的用户，请关闭PostChat的智能对话功能即可。**
 
-最近研究AI在博客和文章领域的应用，发现AI摘要是一个很不错的方向，研究了很久给搞出来了。在这篇文章中，我将帮助大家如何让你的博客接入TianliGPT。
+插件安装地址：https://postchat.zhheo.com/plugin/
 
 ![](/img/workflows.png)
 
