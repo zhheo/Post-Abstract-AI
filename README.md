@@ -101,3 +101,10 @@ zhheo@qq.com
 npm run docs:build
 
 npm run docs:dev
+
+## 赞助
+
+本项目 CDN 加速及安全防护由 [Tencent EdgeOne](https://edgeone.ai/zh?from=github) 赞助
+
+![34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b](https://github.com/user-attachments/assets/0f3da64f-9e35-4118-9286-7ad46e753604)
+
